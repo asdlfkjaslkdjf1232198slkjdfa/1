@@ -1,0 +1,227 @@
+<!DOCTYPE html><html class="no-js" lang="es-ES"><head><meta http-equiv="content-type" content="text/html" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ><link rel="profile" href="http://gmpg.org/xfn/11"><link type="text/css" media="all" href="https://mierda.tv/wp-contenido/cache/autoptimize/css/autoptimize_dcbc99a7d03052a28dbf604173960da0.css" rel="stylesheet" /><title>Programando con Love 2D &#8211; Moviendo rectángulos con el teclado &#8211; [ MIERDA TV ]</title><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Feed" href="https://mierda.tv/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; RSS de los comentarios" href="https://mierda.tv/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Programando con Love 2D &#8211; Moviendo rectángulos con el teclado RSS de los comentarios" href="https://mierda.tv/2017/12/30/programando-con-love-2d-moviendo-rectangulos-con-el-teclado/feed/" /><link rel='stylesheet' id='mcluhan-fonts-css'  href='https://fonts.googleapis.com/css?family=Archivo:400,400i,600,600i,700,700i&#038;subset=latin-ext' type='text/css' media='all' /> <script type='text/javascript' src='https://mierda.tv/wp-includes/js/jquery/jquery.js'></script> <link rel='https://api.w.org/' href='https://mierda.tv/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mierda.tv/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mierda.tv/wp-includes/wlwmanifest.xml" /><link rel='prev' title='Programando con Love 2D &#8211; Rectángulos de colores en movimiento' href='https://mierda.tv/2017/12/30/programando-con-love-2d-rectangulos-de-colores-en-movimiento/' /><link rel='next' title='Programando con Love 2D &#8211; Ejemplos de animación I' href='https://mierda.tv/2017/12/30/programando-con-love-2d-ejemplos-de-animacion-i/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://mierda.tv/2017/12/30/programando-con-love-2d-moviendo-rectangulos-con-el-teclado/" /><link rel='shortlink' href='https://mierda.tv/?p=4639' /><link rel="alternate" type="application/json+oembed" href="https://mierda.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmierda.tv%2F2017%2F12%2F30%2Fprogramando-con-love-2d-moviendo-rectangulos-con-el-teclado%2F" /> <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script> <link rel="icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon-1.png" type="image/png"/><link rel="shortcut icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon.png" /></head><body class="post-template-default single single-post postid-4639 single-format-standard"><header class="site-header group"><h1 class="site-title"><a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></h1><p class="site-description">NSFW Fanta text files</p><div class="nav-toggle"><div class="bar"></div><div class="bar"></div></div><div class="menu-wrapper"><ul class="main-menu desktop"><li id="menu-item-9007" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li id="menu-item-9006" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li id="menu-item-9008" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li id="menu-item-9012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li id="menu-item-9011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li id="menu-item-9010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li></ul></div><ul class="social-menu desktop"><li><a href="https://mierda.tv/?s="></a></li><li id="menu-item-10588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></header><div class="mobile-menu-wrapper"><ul class="main-menu mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li><li class="toggle-mobile-search-wrapper"><a href="#" class="toggle-mobile-search">Buscar</a></li></ul><ul class="social-menu mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></div><div class="mobile-search"><div class="untoggle-mobile-search"></div><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab6050b7da0"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab6050b7da0" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form><div class="mobile-results"><div class="results-wrapper"></div></div></div><div class="search-overlay"><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab6050b7e37"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab6050b7e37" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form></div><main class="site-content"><article class="post-4639 post type-post status-publish format-standard hentry category-codigo category-juegos missing-thumbnail"><header class="entry-header section-inner"><h1 class="entry-title">Programando con Love 2D &#8211; Moviendo rectángulos con el teclado</h2><div class="meta"> <time><a href="https://mierda.tv/2017/12/30/programando-con-love-2d-moviendo-rectangulos-con-el-teclado/" title="30 diciembre, 2017 2:45 am">30 diciembre, 2017</a></time> <span> En <a href="https://mierda.tv/category/codigo/" rel="category tag"># CODE</a>, <a href="https://mierda.tv/category/juegos/" rel="category tag"># GAMES</a> </span></div></header><div class="entry-content section-inner"><p>En anteriores posts ya hemos hablado de como compilar o instalar love 2D y hemos visto otros ejemplos. Simplemente recordar que como punto de partida este post viene bien:</p><p>* <a href="https://mierda.tv/2017/12/30/programando-con-love-2d-rectangulos-de-colores-en-movimiento/">Programando con Love 2D rectángulos de colores en movimiento</a></p><p>Sin entretenernos más en eso en este post se hablará de como mover un puntito por la pantalla. Un sencillo código que puede servir de ejemplo para conocer como como mover mediante el teclado algún objeto en pantalla.</p><p>Podemos comenzar con un ejemplo muy simple que no hace nada más que mostrar en la consola la tecla que hemos pulsado y un cuadrado de 5x5px en el eje x=0 y=0:</p><pre>
+function love.load()
+        x = 0
+        y = 0
+end
+
+function love.update()
+end
+
+function love.draw()
+        love.graphics.setColor(0, 255, 0) -- set green color
+        love.graphics.rectangle("fill", x, y, 5, 5)
+end
+
+function love.keypressed(key)
+        print(key)
+end
+</pre><p>La función keypressed nos servirá en este caso simplemente para que si presionamos alguna tecla podamos ver que nombre tiene. Eso nos servirá para poder controlar cuando alguien pulsa una tecla y picar código que haga algo.</p><p><img src="https://mierda.tv/wp-contenido/uploads/2017/12/key.png" alt="" width="1366" height="768" class="alignnone size-full wp-image-4642" /></p><p>Como por ejemplo este código:</p><pre>
+function love.load()
+        x = 0
+        y = 0
+end
+
+function love.update()
+end
+
+function love.draw()
+        love.graphics.setColor(0, 255, 0) -- set green color
+        love.graphics.rectangle("fill", x, y, 5, 5)
+end
+
+function love.keypressed(key)
+        --print(key)
+        if ( key == "down" ) then y = y + 10 end
+        if ( key == "up" ) then y = y - 10 end
+        if ( key == "left" ) then x = x - 10 end
+        if ( key == "right" ) then x = x + 10 end
+end
+</pre><p><img src="https://mierda.tv/wp-contenido/uploads/2017/12/keys-asignadas.png" alt="" width="1366" height="768" class="alignnone size-full wp-image-4644" /></p><p>Con eso si lo guardamos en un directorio como main.lua y ejecutamos con &#8220;love .&#8221; tendría que permitir que movamos ese cuadrado de 5&#215;5.</p><p>Cuando presionemos la tecla de abajo sumará 10 al valor de y, etc&#8230;</p><p>Esto de todos modos sirve para ir viendo como controlar el tema pero ahora mismo es de poca utilidad, es decir, hemos de fijar la pantalla a pantalla completa por ejemplo y medir cuanto tiene de alto y de ancho en el ordenador que se ejecute. En base a eso no permitir valores menores de 0 para x y no permitir valores menores de 0 para y. Lo mismo para valores superiores al ancho de la pantalla o valores superiores al alto de la pantalla.</p><p><strong>Eso o si permitirlos y que cuando la &#8220;pulga&#8221; suba por la parte superior de repente salga abajo rollo al snake de toda la vida.</strong> Lo mismo para izquierda y derecha. Una pantalla infinita en la que se sale por un lado y se entra por el otro.</p><p>Veamos un gif y luego el código de ejemplo de algo más controlado:</p><div style="background-color: black;"> <img src="https://mierda.tv/wp-contenido/uploads/2017/12/pulga-moviendose.gif" alt="" width="1366" height="768" class="alignnone size-full wp-image-4646" /></div><p>Y aquí el ejemplo en código:</p><pre>
+function love.load()
+	love.window.setFullscreen(true, "desktop") -- set fullscreen
+	sw, sh = love.graphics.getDimensions() -- sw screen width and sh screen height
+	sw = sw - 5 -- less 5px
+	sh = sh - 5 -- less 5px
+	x = 0
+	y = 0
+end
+
+function love.update()
+end
+
+function love.draw()
+	love.graphics.setColor(0, 255, 0) -- set green color
+	love.graphics.rectangle("fill", x, y, 5, 5)
+end
+
+function love.keypressed(key)
+	if ( key == "down" ) then
+		if ( y >= 0 and y <= sh ) then
+			y = y + 10
+		end
+		if ( y > sh ) then
+			y = 0
+		end
+	end
+
+	if ( key == "up" ) then
+		if ( y >= 0 and y <= sh ) then
+			y = y - 10
+		end 
+		if ( y < 0 ) then
+			y = sh
+		end
+        end
+
+        if ( key == "left" ) then
+                if ( x >= 0 and x <= sw ) then
+                        x = x - 10
+                end
+                if ( x < 0 ) then
+                        x = sw
+                end
+        end
+
+        if ( key == "right" ) then
+                if ( x >= 0 and x <= sw ) then
+                        x = x + 10
+                end
+                if ( x > sw ) then
+                        x = 0
+                end
+        end
+
+end
+
+</pre><p>Se puede hacer de mil formas. Esa es una que espero se entienda.</p><p>Básicamente nos podemos fijar en la tecla &#8220;down&#8221;. Aquí el codigo:</p><pre>
+	if ( key == "down" ) then
+		if ( y >= 0 and y <= sh ) then
+			y = y + 10
+		end
+		if ( y > sh ) then
+			y = 0
+		end
+	end
+</pre><p>Comprobamos si la tecla presionada es down y entonces comprobamos si la variable &#8220;y&#8221; (el valor de y que es la posición de la pulga en el eje Y) es mayor o igual a 0 y es menor o igual al alto de la pantalla. En caso de que eso ocurra restará 10 al valor de Y para que se mueva abajo 10px. Añadimos otra comprobación cuando se presiona la tecla que es si el valor de &#8220;y&#8221; es mayor del valor del alto de la pantalla (sh) y entonces si eso ocurre es que el valor de &#8220;y&#8221; tendría que ser 0 (es decir, aparecer por la parte de arriba de la pantalla).</p><p><strong>Nota: Si nos fijamos solamente se mueve cuando presionamos la tecla pero no sigue moviéndose cuando la dejamos presionada. Ahora vamos con eso</strong></p><p>Deseamos que cuando dejemos presionada la tecla se mueva. Eso se puede hacer cambiando el código a la función update y usando love.keyboard.isDown(). Un ejemplo:</p><div style="background-color: black;"> <img src="https://mierda.tv/wp-contenido/uploads/2017/12/atodaleche.gif" alt="" width="1366" height="768" class="alignnone size-full wp-image-4650" /></div><p>El código del ejemplo.</p><pre>
+function love.load()
+	love.window.setFullscreen(true, "desktop") -- set fullscreen
+	sw, sh = love.graphics.getDimensions() -- sw screen width and sh screen height
+	sw = sw - 5 -- less 5px
+	sh = sh - 5 -- less 5px
+	x = 0
+	y = 0
+end
+
+function love.update()
+
+        if ( love.keyboard.isDown('down') ) then
+
+                if ( y >= 0 and y <= sh ) then y = y + 10 end
+                if ( y > sh ) then y = 0 end
+        end
+
+        if ( love.keyboard.isDown("up") ) then
+                if ( y >= 0 and y <= sh ) then
+                        y = y - 10
+                end
+                if ( y < 0 ) then
+                        y = sh
+                end
+        end
+
+        if ( love.keyboard.isDown("left") ) then
+                if ( x >= 0 and x <= sw ) then
+                        x = x - 10
+                end
+                if ( x < 0 ) then
+                        x = sw
+                end
+        end
+
+        if ( love.keyboard.isDown("right") ) then
+                if ( x >= 0 and x <= sw ) then
+                        x = x + 10
+                end
+                if ( x > sw ) then
+                        x = 0
+                end
+        end
+
+
+
+end
+
+function love.draw()
+	love.graphics.setColor(0, 255, 0) -- set green color
+	love.graphics.rectangle("fill", x, y, 5, 5)
+end
+
+function love.keypressed(key)
+
+end
+
+</pre><p><strong>Y para rematar y hacerlo bien</strong> vamos a hacer que cuando presionamos solamente una tecla de arriba, abajo, derecha o izquierda se mueva lento aunque dejemos pulsado. Digamos que queremos que exista otra tecla que cuando se presiona al mismo tiempo que arriba, abajo, derecha e izquierda &#8220;haga que corra.</p><p><strong>Usaremos la tecla shift para correr.</strong> Si dejasemos presionado shift+left por ejemplo pues correrá y así con el resto.</p><div style="background-color: black;"> <img src="https://mierda.tv/wp-contenido/uploads/2017/12/correr-o-ir-lento.gif" alt="" width="1366" height="768" class="alignnone size-full wp-image-4654" /></div><p>Aquí el código:</p><pre>
+function love.load()
+	love.window.setFullscreen(true, "desktop") -- set fullscreen
+	sw, sh = love.graphics.getDimensions() -- sw screen width and sh screen height
+	sw = sw - 5 -- less 5px
+	sh = sh - 5 -- less 5px
+	x = 0
+	y = 0
+end
+
+function love.update()
+
+        if ( love.keyboard.isDown('lshift') and love.keyboard.isDown('down') ) then
+                if ( y >= 0 and y <= sh ) then y = y + 10 end
+                if ( y > sh ) then y = 0 end
+        end
+
+        if ( love.keyboard.isDown('lshift') and love.keyboard.isDown("up") ) then
+                if ( y >= 0 and y <= sh ) then y = y - 10 end
+                if ( y < 0 ) then y = sh end
+        end
+
+        if ( love.keyboard.isDown('lshift') and love.keyboard.isDown("left") ) then
+                if ( x >= 0 and x <= sw ) then x = x - 10 end
+                if ( x < 0 ) then x = sw end
+        end
+
+        if ( love.keyboard.isDown('lshift') and love.keyboard.isDown("right") ) then
+                if ( x >= 0 and x <= sw ) then x = x + 10 end
+                if ( x > sw ) then x = 0 end
+        end
+
+end
+
+function love.draw()
+	love.graphics.setColor(0, 255, 0) -- set green color
+	love.graphics.rectangle("fill", x, y, 5, 5)
+end
+
+function love.keypressed(key)
+
+	if ( key == "down" ) then
+		if ( y >= 0 and y <= sh ) then y = y + 10 end
+		if ( y > sh ) then y = 0 end
+	end
+
+	if ( key == "up" ) then
+		if ( y >= 0 and y <= sh ) then y = y - 10 end 
+		if ( y < 0 ) then y = sh end
+        end
+
+        if ( key == "left" ) then
+                if ( x >= 0 and x <= sw ) then x = x - 10 end
+                if ( x < 0 ) then x = sw end
+        end
+
+        if ( key == "right" ) then
+                if ( x >= 0 and x <= sw ) then x = x + 10 end
+                if ( x > sw ) then x = 0 end
+        end
+
+end
+
+
+</pre><div class='rp4wp-related-posts'><h3>Más mierda posiblemente relacionada</h3><ul><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/01/03/programando-con-love-2d-textos-de-colores-centrados/'>Programando con Love 2D - Textos de colores centrados</a><p>En el anterior post sobre "Programación con Love 2D" vimos como centrar una imagen. Es&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2017/12/30/programando-con-love-2d-rectangulos-de-colores-en-movimiento/'>Programando con Love 2D - Rectángulos de colores en movimiento</a><p>En anteriores entradas hemos hablado de como compilar love 2d (un framework LUA para realizar&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2017/12/30/programando-con-love-2d-ejemplos-de-animacion-i/'>Programando con Love 2D - Ejemplos de animación I</a><p>Posiblemente escribiré más de un post sobre como realizar animación programando con el framework love2D&hellip;</p></div></li></ul></div></div><div class="post-pagination section-inner"><div class="previous-post"> <a href="https://mierda.tv/2017/12/30/programando-con-love-2d-rectangulos-de-colores-en-movimiento/" rel="prev"><span>Programando con Love 2D &#8211; Rectángulos de colores en movimiento</span></a></div><div class="next-post"> <a href="https://mierda.tv/2017/12/30/programando-con-love-2d-ejemplos-de-animacion-i/" rel="next"><span>Programando con Love 2D &#8211; Ejemplos de animación I</span></a></div></div><div class="section-inner wide"><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/12/30/programando-con-love-2d-moviendo-rectangulos-con-el-teclado/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://mierda.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><label for="comment">Comentario</label><textarea autocomplete="nope"  id="9ce28af5d5"  name="9ce28af5d5"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="nope" style="padding:0;clip:rect(1px, 1px, 1px, 1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;" tabindex="-1"></textarea><script type="text/javascript">document.getElementById("comment").setAttribute( "id", "596ba48f740f55cf25b2076af13237e5" );document.getElementById("9ce28af5d5").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p><p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p><p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" /> <input type='hidden' name='comment_post_ID' value='4639' id='comment_post_ID' /> <input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p></form></div></div></div><footer class="site-footer section-inner"><p class="copyright">&copy; 2018 <a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></p></footer></main> <script type="text/javascript">jQuery(document).ready( function() { jQuery.post( "https://mierda.tv/wp-admin/admin-ajax.php", { action : "entry_views", _ajax_nonce : "70537a5d8f", post_id : 4639 } ); } );</script> <script type='text/javascript'>var es_widget_page_notices = {"es_email_notice":"Por favor introduce direcci\u00f3n de correo electr\u00f3nico","es_success_message":"Suscripci\u00f3n correcta.","es_success_notice":"\u00a1Suscripci\u00f3n correcta! Consulta tu bandeja de entrada y confirma tu suscripci\u00f3n. Si no ves el correo en unos minutos, consulta la carpeta spam\/correo no deseado.","es_email_exists":"\u00a1Esa direcci\u00f3n de correo electr\u00f3nico ya existe!","es_error":"Ups. Ha sucedido un error inesperado.","es_invalid_email":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","es_try_later":"Por favor, int\u00e9ntalo transcurridos unos minutos","es_ajax_url":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var mcluhan_ajaxpagination = {"ajaxurl":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php","query_vars":"{\"page\":\"\",\"year\":\"2017\",\"monthnum\":\"12\",\"day\":\"30\",\"name\":\"programando-con-love-2d-moviendo-rectangulos-con-el-teclado\"}"};</script> <script type="text/javascript" defer src="https://mierda.tv/wp-contenido/cache/autoptimize/js/autoptimize_0f440c40192207511c15447e1fc97710.js"></script></body></html>

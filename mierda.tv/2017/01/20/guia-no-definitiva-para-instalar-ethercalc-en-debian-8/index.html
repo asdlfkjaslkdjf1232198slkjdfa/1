@@ -1,0 +1,107 @@
+<!DOCTYPE html><html class="no-js" lang="es-ES"><head><meta http-equiv="content-type" content="text/html" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ><link rel="profile" href="http://gmpg.org/xfn/11"><link type="text/css" media="all" href="https://mierda.tv/wp-contenido/cache/autoptimize/css/autoptimize_dcbc99a7d03052a28dbf604173960da0.css" rel="stylesheet" /><title>Guía no definitiva para instalar ethercalc en debian 8 &#8211; [ MIERDA TV ]</title><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Feed" href="https://mierda.tv/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; RSS de los comentarios" href="https://mierda.tv/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Guía no definitiva para instalar ethercalc en debian 8 RSS de los comentarios" href="https://mierda.tv/2017/01/20/guia-no-definitiva-para-instalar-ethercalc-en-debian-8/feed/" /><link rel='stylesheet' id='mcluhan-fonts-css'  href='https://fonts.googleapis.com/css?family=Archivo:400,400i,600,600i,700,700i&#038;subset=latin-ext' type='text/css' media='all' /> <script type='text/javascript' src='https://mierda.tv/wp-includes/js/jquery/jquery.js'></script> <link rel='https://api.w.org/' href='https://mierda.tv/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mierda.tv/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mierda.tv/wp-includes/wlwmanifest.xml" /><link rel='prev' title='Un rufián en la Red' href='https://mierda.tv/2017/01/17/un-rufian-en-la-red/' /><link rel='next' title='Montaje de impresora 3D BQ Hephestos 2' href='https://mierda.tv/2017/01/21/montaje-de-impresora-3d-bq-hephestos-2/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://mierda.tv/2017/01/20/guia-no-definitiva-para-instalar-ethercalc-en-debian-8/" /><link rel='shortlink' href='https://mierda.tv/?p=2009' /><link rel="alternate" type="application/json+oembed" href="https://mierda.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmierda.tv%2F2017%2F01%2F20%2Fguia-no-definitiva-para-instalar-ethercalc-en-debian-8%2F" /> <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script> <link rel="icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon-1.png" type="image/png"/><link rel="shortcut icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon.png" /></head><body class="post-template-default single single-post postid-2009 single-format-standard"><header class="site-header group"><h1 class="site-title"><a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></h1><p class="site-description">NSFW Fanta text files</p><div class="nav-toggle"><div class="bar"></div><div class="bar"></div></div><div class="menu-wrapper"><ul class="main-menu desktop"><li id="menu-item-9007" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li id="menu-item-9006" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li id="menu-item-9008" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li id="menu-item-9012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li id="menu-item-9011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li id="menu-item-9010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li></ul></div><ul class="social-menu desktop"><li><a href="https://mierda.tv/?s="></a></li><li id="menu-item-10588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></header><div class="mobile-menu-wrapper"><ul class="main-menu mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li><li class="toggle-mobile-search-wrapper"><a href="#" class="toggle-mobile-search">Buscar</a></li></ul><ul class="social-menu mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></div><div class="mobile-search"><div class="untoggle-mobile-search"></div><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab60f01cadb"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab60f01cadb" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form><div class="mobile-results"><div class="results-wrapper"></div></div></div><div class="search-overlay"><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab60f01cb73"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab60f01cb73" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form></div><main class="site-content"><article class="post-2009 post type-post status-publish format-standard hentry category-sistemas tag-ble-sniffer tag-calc tag-hojas-de-calculo-colaborativas tag-pads missing-thumbnail"><header class="entry-header section-inner"><h1 class="entry-title">Guía no definitiva para instalar ethercalc en debian 8</h2><div class="meta"> <time><a href="https://mierda.tv/2017/01/20/guia-no-definitiva-para-instalar-ethercalc-en-debian-8/" title="20 enero, 2017 3:36 pm">20 enero, 2017</a></time> <span> En <a href="https://mierda.tv/category/sistemas/" rel="category tag"># SYSTEM</a> </span></div></header><div class="entry-content section-inner"><p>Goobye lenin, botella, my friend :). Lo nuevo no siempre es mejor. Por suerte<strong> ethercalc</strong> no es algo nuevo.</p><p>Con no definitiva me refiero a que no es algo acabado, algo bueno. Es solo una forma más de como montarlo. Existen mejores formas y esta solo pretende ayudar en el proceso.</p><p><strong>Ethercalc nos permite manejar una hoja de calculo de forma colaborativa como un pad.</strong></p><p>&nbsp;</p><p>Formas de instalar algo existen muchas. Yo voy a relatar una en una maquina de pruebas y que espero sirva de ejemplo (bueno o malo) para una instalación mejor si es posible.</p><p>Lo primero es<strong> instalar nodejs</strong>.  Esto siempre genera miedos. Por suerte existe nvm (node version manager) y por tanto existe la herramienta para poder pasar de una versión a otra de forma flexible.</p><h3></h3><h3>Instalación de nvm en debian 8:</h3><pre># apt-get update
+# apt-get install build-essential libssl-dev git
+
+</pre><p>Comprobamos la versión: https://github.com/creationix/nvm<br /> Actualmente la 0.33</p><h3></h3><pre># curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh -o install_nvm.sh
+ # bash install_nvm.sh
+ # source ~/.profile</pre><p>&nbsp;</p><h3>Instalar nodejs con nvm ahora:</h3><pre># nvm ls-remote</pre><p>&nbsp;</p><p>Instalaremos la  v6.9.2   (<strong>Latest LTS: Boron</strong>)</p><p>&nbsp;</p><pre># nvm install 6.9.2
+# nvm use 6.9.2
+# node -v
+# nvm alias default 6.9.2</pre><p>Ahora a por la mandanga.</p><h3></h3><h3>Instalar ethercalc:</h3><p>&nbsp;</p><p>El repo en github: <a href="https://github.com/audreyt/ethercalc">https://github.com/audreyt/ethercalc</a> (la ministra de Taiwan)</p><p>&nbsp;</p><pre># npm i -g ethercalc</pre><p>&nbsp;</p><p>Ya podríamos ejecutar ethercalc y que se vea en el puerto 8000.</p><p>&nbsp;</p><p>&nbsp;</p><h3>Instalar redis:</h3><p>&nbsp;</p><p>Si no instalas redis cuando ejecutes ethercalc generará un archivo llamado dump.json que guardará los cambios realizados. No obstante es mejor instalar redis leñes.</p><p>&nbsp;</p><pre># apt-get install software-properties-common</pre><p>en el sources.list</p><pre>deb http://packages.dotdeb.org jessie all
+deb-src http://packages.dotdeb.org jessie all</pre><p>&nbsp;</p><p>Y luego</p><pre># apt-get update
+# apt-get install redis-server</pre><p>&nbsp;</p><p>Ahora si ejecutamos ethercalc usará redis .</p><p>Para copia de seguridad copiaremos en debian 8 el contenido de: /var/lib/redis/dump.rdb</p><p>&nbsp;</p><h3>Mejor poner por delante un nginx</h3><p>Configuración de ejemplo para nginx</p><pre>upstream backend {
+ server 127.0.0.1:8000 max_fails=3;
+ server localhost:8000 max_fails=3;
+}
+
+map $http_upgrade $connection_upgrade {
+ default upgrade;
+ '' close;
+}
+
+server {
+ listen 80;
+ server_name calc.dominio.es localhost;
+ location / {
+ include /etc/nginx/cors.conf;
+ return 301 https://$server_name$request_uri;
+ }
+}
+
+proxy_cache_path /var/www/cache levels=1:2 keys_zone=my-cache:8m max_size=1000m inactive=600m;
+proxy_temp_path /var/www/cache/tmp;
+
+server {
+ listen 443 ssl spdy;
+ server_name calc.dominio.es localhost;
+
+large_client_header_buffers 32 64k;
+ root /usr/share/nginx/html;
+
+index index.html index.htm;
+
+ssl on;
+ ssl_certificate /etc/letsencrypt/live/calc.dominio.es/fullchain.pem;
+ ssl_certificate_key /etc/letsencrypt/live/calc.dominio.es/privkey.pem;
+
+access_log /var/log/nginx/calc.dominio.es-access.log;
+ error_log /var/log/nginx/calc.dominio.es-error.log;
+
+
+ location ~* (\.(css|png|gif|svg|ico|txt)|static/.*\.js(on)?|manifest\.(appcache|webapp|json)|browserconfig\.xml)$ {
+ root /var/www/calc/;
+ expires 24h;
+ add_header Cache-Control public;
+ }
+
+location ~* "(?:[.]|/_/[^/]+/)(?:html|csv|csv\.json)$" {
+ proxy_pass http://backend;
+ proxy_cache_use_stale error timeout http_500 http_502 http_503 http_504;
+ proxy_http_version 1.1;
+ proxy_set_header Upgrade $http_upgrade;
+ proxy_read_timeout 31536000;
+ proxy_buffers 32 64k;
+ proxy_buffer_size 128k;
+ add_header Strict-Transport-Security max-age=31536000;
+ include /etc/nginx/cors.conf;
+ }
+ 
+ location / {
+ gzip on;
+ gzip_min_length 1000;
+ gzip_proxied any;
+ proxy_pass http://backend;
+ proxy_http_version 1.1;
+ proxy_set_header Upgrade $http_upgrade;
+ proxy_read_timeout 31536000;
+ proxy_set_header Connection $connection_upgrade;
+ # prevents 502 bad gateway error
+ proxy_buffers 32 64k;
+ proxy_buffer_size 128k;
+ add_header Strict-Transport-Security max-age=31536000;
+ include /etc/nginx/cors.conf;
+ }
+}</pre><p>&nbsp;</p><p>&nbsp;</p><p>Necesitaremos crear los directorios oportunos si seguimos ese ejemplo. Por ejemplo crear /var/www/cache y /var/www/cache/tmp</p><p>También crear el archivo cors.cof si lo necesitamos. Con este contenido:</p><p>&nbsp;</p><pre>if ($request_method = OPTIONS) {
+ add_header Access-Control-Allow-Origin "*";
+ add_header Access-Control-Allow-Methods "GET,POST,PUT";
+ add_header Access-Control-Allow-Headers "X-Requested-With,Content-Type,If-Modified-Since";
+ return 204;
+}</pre><p>&nbsp;</p><h3>Demonizar rápidamente</h3><p>&nbsp;</p><pre># cd /etc/init.d/
+# nano ethercalc
+
+</pre><p>Metemos esto por ejemplo:</p><p>&nbsp;</p><pre>#!/bin/sh
+
+if [ "$1" = null ]; then
+        echo "usa como argumento: start o stop"
+fi
+
+if [ "$1" = 'start' ]; then
+        echo "Iniciando ethercalc"
+                start-stop-daemon --start --chuid "root:root" --background --make-pidfile --pidfile /var/run/ethercalc.pid --exec /root/.nvm/versions/node/v6.9.2/bin/ethercalc || true
+fi
+
+if [ "$1" = 'stop' ]; then
+        echo "parando ethercalc"
+                killall node
+fi
+
+</pre><p>No es el mejor ejemplo, es solo un ejemplo malo. Eso no servirá si se reinicia la maquina. No obstante si nos servirá para levantar y parar el servicio.</p><p>&nbsp;</p><pre># update-rc.d ethercalc defaults</pre><p>&nbsp;</p><p>Eso dará error ya que no hemos metido la cabecera típica. puedes copiarla de otros script en /etc/init.d/ y hacerlo en condiciones si quieres.</p><p>&nbsp;</p><h3>Sobre el ssl</h3><p>Eso con letsencrypt lo solucionas (gracias a que existe en la actualidad leñes).</p><div class='rp4wp-related-posts'><h3>Más mierda posiblemente relacionada</h3><ul><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/01/10/instalar-redmine-en-debian-9-desde-docker/'>Instalar redmine desde docker</a><p>Hace un mes publicamos como instalar Redmine con thin y nginx. Concretamente aquí. Lo cierto&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/01/10/instalar-docker-sobre-debian-9-stretch/'>Instalar Docker sobre debian 9 stretch</a><p>En diciembre del 2016 publicamos un post sobre como instalar docker sobre debian 8. Este&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2016/12/08/instalar-docker-sobre-debian-8-jessie/'>Instalar Docker sobre debian 8 jessie</a><p>Tras la charla del señor miyagi en la brecha digital me entró el gusanillo de&hellip;</p></div></li></ul></div></div><div class="meta bottom section-inner"><p class="tags"> #<a href="https://mierda.tv/tag/ble-sniffer/" rel="tag">ble sniffer</a> #<a href="https://mierda.tv/tag/calc/" rel="tag">calc</a> #<a href="https://mierda.tv/tag/hojas-de-calculo-colaborativas/" rel="tag">hojas de calculo colaborativas</a> #<a href="https://mierda.tv/tag/pads/" rel="tag">pads</a></p></div><div class="post-pagination section-inner"><div class="previous-post"> <a href="https://mierda.tv/2017/01/17/un-rufian-en-la-red/" rel="prev"><span>Un rufián en la Red</span></a></div><div class="next-post"> <a href="https://mierda.tv/2017/01/21/montaje-de-impresora-3d-bq-hephestos-2/" rel="next"><span>Montaje de impresora 3D BQ Hephestos 2</span></a></div></div><div class="section-inner wide"><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/01/20/guia-no-definitiva-para-instalar-ethercalc-en-debian-8/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://mierda.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><label for="comment">Comentario</label><textarea autocomplete="nope"  id="35b61e229f"  name="35b61e229f"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="nope" style="padding:0;clip:rect(1px, 1px, 1px, 1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;" tabindex="-1"></textarea><script type="text/javascript">document.getElementById("comment").setAttribute( "id", "1c2cf49161785506dea040dff40be9b7" );document.getElementById("35b61e229f").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p><p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p><p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" /> <input type='hidden' name='comment_post_ID' value='2009' id='comment_post_ID' /> <input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p></form></div></div></div><footer class="site-footer section-inner"><p class="copyright">&copy; 2018 <a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></p></footer></main> <script type="text/javascript">jQuery(document).ready( function() { jQuery.post( "https://mierda.tv/wp-admin/admin-ajax.php", { action : "entry_views", _ajax_nonce : "70537a5d8f", post_id : 2009 } ); } );</script> <script type='text/javascript'>var es_widget_page_notices = {"es_email_notice":"Por favor introduce direcci\u00f3n de correo electr\u00f3nico","es_success_message":"Suscripci\u00f3n correcta.","es_success_notice":"\u00a1Suscripci\u00f3n correcta! Consulta tu bandeja de entrada y confirma tu suscripci\u00f3n. Si no ves el correo en unos minutos, consulta la carpeta spam\/correo no deseado.","es_email_exists":"\u00a1Esa direcci\u00f3n de correo electr\u00f3nico ya existe!","es_error":"Ups. Ha sucedido un error inesperado.","es_invalid_email":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","es_try_later":"Por favor, int\u00e9ntalo transcurridos unos minutos","es_ajax_url":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var mcluhan_ajaxpagination = {"ajaxurl":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php","query_vars":"{\"page\":\"\",\"year\":\"2017\",\"monthnum\":\"01\",\"day\":\"20\",\"name\":\"guia-no-definitiva-para-instalar-ethercalc-en-debian-8\"}"};</script> <script type="text/javascript" defer src="https://mierda.tv/wp-contenido/cache/autoptimize/js/autoptimize_0f440c40192207511c15447e1fc97710.js"></script></body></html>

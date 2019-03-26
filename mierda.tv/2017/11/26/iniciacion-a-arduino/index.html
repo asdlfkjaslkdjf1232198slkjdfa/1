@@ -1,0 +1,299 @@
+<!DOCTYPE html><html class="no-js" lang="es-ES"><head><meta http-equiv="content-type" content="text/html" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ><link rel="profile" href="http://gmpg.org/xfn/11"><link type="text/css" media="all" href="https://mierda.tv/wp-contenido/cache/autoptimize/css/autoptimize_dcbc99a7d03052a28dbf604173960da0.css" rel="stylesheet" /><title>Iniciación a Arduino &#8211; [ MIERDA TV ]</title><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Feed" href="https://mierda.tv/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; RSS de los comentarios" href="https://mierda.tv/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Iniciación a Arduino RSS de los comentarios" href="https://mierda.tv/2017/11/26/iniciacion-a-arduino/feed/" /><link rel='stylesheet' id='mcluhan-fonts-css'  href='https://fonts.googleapis.com/css?family=Archivo:400,400i,600,600i,700,700i&#038;subset=latin-ext' type='text/css' media='all' /> <script type='text/javascript' src='https://mierda.tv/wp-includes/js/jquery/jquery.js'></script> <link rel='https://api.w.org/' href='https://mierda.tv/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mierda.tv/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mierda.tv/wp-includes/wlwmanifest.xml" /><link rel='prev' title='10 Juegos libres molones para GNU/Linux' href='https://mierda.tv/2017/11/25/10-juegos-libres-molones-para-gnu-linux/' /><link rel='next' title='Instalar redmine en Debian 9 con Thin y Nginx' href='https://mierda.tv/2017/12/01/debian9-thin-redmine-nginx/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://mierda.tv/2017/11/26/iniciacion-a-arduino/" /><link rel='shortlink' href='https://mierda.tv/?p=3934' /><link rel="alternate" type="application/json+oembed" href="https://mierda.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmierda.tv%2F2017%2F11%2F26%2Finiciacion-a-arduino%2F" /> <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script> <link rel="icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon-1.png" type="image/png"/><link rel="shortcut icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon.png" /></head><body class="post-template-default single single-post postid-3934 single-format-standard"><header class="site-header group"><h1 class="site-title"><a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></h1><p class="site-description">NSFW Fanta text files</p><div class="nav-toggle"><div class="bar"></div><div class="bar"></div></div><div class="menu-wrapper"><ul class="main-menu desktop"><li id="menu-item-9007" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li id="menu-item-9006" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li id="menu-item-9008" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li id="menu-item-9012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li id="menu-item-9011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li id="menu-item-9010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li></ul></div><ul class="social-menu desktop"><li><a href="https://mierda.tv/?s="></a></li><li id="menu-item-10588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></header><div class="mobile-menu-wrapper"><ul class="main-menu mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li><li class="toggle-mobile-search-wrapper"><a href="#" class="toggle-mobile-search">Buscar</a></li></ul><ul class="social-menu mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></div><div class="mobile-search"><div class="untoggle-mobile-search"></div><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab607db981e"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab607db981e" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form><div class="mobile-results"><div class="results-wrapper"></div></div></div><div class="search-overlay"><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab607db98b2"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab607db98b2" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form></div><main class="site-content"><article class="post-3934 post type-post status-publish format-standard hentry category-arduino tag-arduino tag-iniciacion-a-arduino missing-thumbnail"><header class="entry-header section-inner"><h1 class="entry-title">Iniciación a Arduino</h2><div class="meta"> <time><a href="https://mierda.tv/2017/11/26/iniciacion-a-arduino/" title="26 noviembre, 2017 2:59 pm">26 noviembre, 2017</a></time> <span> En <a href="https://mierda.tv/category/arduino/" rel="category tag"># ARDUINO</a> </span></div></header><div class="entry-content section-inner"><h3><span id="Descripci.C3.B3n_de_la_primera_sesi.C3.B3n_de_charlas.2Ftalleres_sobre_arduino" class="mw-headline">Descripción de la primera sesión de charlas/talleres sobre arduino</span></h3><p>En la primera sesión se hablará sobre lo que es arduino, donde conseguir un arduino y material para comenzar (kits), instalar arduino IDE, un simulador (simuino), software para mostrar gráficamente las conexiones de los diferentes elementos y placas (fritzing). Se realizarán varios ejemplos con LEDs y pulsadores. Se hablará de la estructura base de un programa en Arduino así como las variables y sus tipos. Se hablará de los tipos de entradas/salidas.</p><p>&nbsp;</p><h3><span id=".C2.BFQu.C3.A9_es_Arduino.3F" class="mw-headline">¿Qué es Arduino?</span></h3><p>Arduino es una compañía de <b>hardware libre</b> y una comunidad tecnológica que diseña y manufactura placas de desarrollo de hardware y software, compuesta respectivamente por circuitos impresos que integran un microcontrolador y un entorno de desarrollo (IDE), en donde se programa cada placa.</p><p>Arduino se enfoca en acercar y facilitar el uso de la electrónica y programación de sistemas embebidos en proyectos multidisciplinarios. Toda la plataforma, <b>tanto para sus componentes de hardware como de software, son liberados con licencia de código abierto</b> (lo cual permite libertad de acceso a ellos).</p><p><b>El hardware consiste en una placa</b>. Un circuito impreso con un microcontrolador (usualmente Atmel AVR) y puertos digitales y analógicos de entrada/salida. Esos puertos pueden conectarse a placas de expansión (shields), que amplían las características de funcionamiento de la placa Arduino. Asimismo, posee un puerto de conexión USB desde donde se puede alimentar la placa y establecer comunicación con el computador.</p><p>Existen múltiples tipos de placas arduino. La más vendida y común que suele servir para la mayoría de proyectos es Arduino uno (es la que usaremos).</p><p><img class="alignnone size-full wp-image-3935" src="https://mierda.tv/wp-contenido/uploads/2017/11/Placas_arduino.png" alt="" width="800" height="573" /></p><p><img class="alignnone size-full wp-image-3936" src="https://mierda.tv/wp-contenido/uploads/2017/11/Arduino1.jpg" alt="" width="620" height="400" /></p><p>Por otro lado, <b>el software consiste en un entorno de desarrollo (IDE)</b> basado en el entorno de Processing y lenguaje de programación basado en Wiring, así como en el cargador de arranque (bootloader) que es ejecutado en la placa.</p><p><a class="external text" href="https://es.wikipedia.org/wiki/Arduino" rel="nofollow">Mas información en Wikipedia</a></p><p>&nbsp;</p><h3><span id="Conseguir_una_placa_Arduino." class="mw-headline">Conseguir una placa Arduino.</span></h3><p>Es posible obtener una placa Arduino Uno rev.3 (por ejemplo) en estos sitios a buen precio:</p><ul><li><a class="external free" href="http://www.banggood.com/" rel="nofollow">http://www.banggood.com/</a></li><li><a class="external free" href="https://es.aliexpress.com" rel="nofollow">https://es.aliexpress.com</a></li><li><a class="external free" href="http://www.dx.com/" rel="nofollow">http://www.dx.com/</a></li><li><a class="external free" href="https://www.pccomponentes.com" rel="nofollow">https://www.pccomponentes.com</a></li><li>&#8230;</li></ul><p>También en tiendas de electrónica e informática posiblemente. En los sitios indicados se pueden obtener muchas veces también kits que incorporan motores, resistencias, cables, leds, sensores, &#8230; Son solamente unas urls de ejemplo. Existen miles de sitios más.</p><p>En Madrid se pueden comprar componentes, cables, &#8230; fisicamente en electrónica embajadores por ejemplo (en la calle embajadores 138).</p><p>&nbsp;</p><h3><span id="Instalaci.C3.B3n_de_Arduino_IDE_en_GNU.2FLinux." class="mw-headline">Instalación de Arduino IDE en GNU/Linux.</span></h3><p>El Arduino IDE lo podremos obtener de la web oficial: <a class="external free" href="https://www.arduino.cc/en/main/software" rel="nofollow">https://www.arduino.cc/en/main/software</a> .</p><p>También suele venir en muchas distros GNU/Linux. Por ejemplo en Debian puedes instalarlo así:</p><pre>apt-get install arduino</pre><p><img class="alignnone size-full wp-image-3938" src="https://mierda.tv/wp-contenido/uploads/2017/11/Arduinoide.png" alt="" width="518" height="626" /></p><p>&nbsp;</p><h3><span id="Instalaci.C3.B3n_de_Simuino_en_GNU.2FLinux." class="mw-headline">Instalación de Simuino en GNU/Linux.</span></h3><p>Con simuino vamos a poder simular el código que se ejecutará en el arduino. Nos permite ir viendo paso a paso lo que ocurre.</p><p>Instalamos algunas <b>dependencias</b>:</p><pre>apt-get install ncurses-dev git</pre><p><b>Clonamos el repositorio</b> de simuino:</p><pre>git clone https://github.com/bsaxen/simuino.git
+cd simuino
+git clone https://github.com/bsaxen/servuino.git
+</pre><p><b>Compilamos</b> simuino:</p><pre>g++ -o simuino simuino.c -lncurses
+</pre><p>Lo <b>ejecutamos</b> por primera vez así:</p><pre>./simuino
+
+<img class="alignnone size-full wp-image-3939" src="https://mierda.tv/wp-contenido/uploads/2017/11/Simuino001.png" alt="" width="1124" height="613" /></pre><p>Simuino tiene un directorio llamado <b>sketchbook</b> en el que meteremos los archivo con el código *.ino. Por defecto traerá algunos ejemplos. Lo ideal es añadir este otro más que es muy sencillo y permite ir viendo como funciona simuino.</p><pre>int ledPin = 13;
+
+void setup() {
+        pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+        digitalWrite(ledPin, HIGH);
+        delay(1000);
+        digitalWrite(ledPin, LOW);
+        delay(1000);
+}
+</pre><p>Lo guardamos dentro del directorio sketchbook con el nombre de ejemplo.ino . Este mismo código puede usarse para compilarlo y mandarselo a arduino usando Arduino IDE y conectando por USB el arduino.</p><p>Una vez abierto simuino podemos escribir <b>help</b> para obtener una lista de comandos.</p><p>Usaremos <b>list</b> para ver los archivos que contiene el directorio sketchbook y seleccionar uno. Seleccionaremos el número que tenga a la izquierda <b>el archivo ejemplo.ino</b></p><p>Una vez lo tenemos seleccionado escribimos: <b>load</b> y luego <b>run</b>.</p><p>Una vez estamos en el modo de ejecución pulsaremos la tecla <b>s</b> y luego con la tecla <b>f</b> vamos para adelante paso a paso y viendo como se va ejecutando el código.</p><p><img class="alignnone size-full wp-image-3940" src="https://mierda.tv/wp-contenido/uploads/2017/11/Simuino002.png" alt="" width="1124" height="613" /></p><h3></h3><h3><span id="Nuestro_primer_programa_para_Arduino" class="mw-headline">Nuestro primer programa para Arduino</span></h3><p>Nuestro primer programa será para la placa arduino UNO rev.3. Esta placa incorpora un led que podemos encender y apagar, un led en el PIN 13.</p><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3942" src="https://mierda.tv/wp-contenido/uploads/2017/11/Ledpin13arduino.jpg" alt="" width="728" height="466" /></p><p>&nbsp;</p><p>Abriremos pues Arduino IDE y copiamos y pegamos allí este código:</p><pre>int ledPin = 13;
+
+void setup() {
+        pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+        digitalWrite(ledPin, HIGH);
+        delay(1000);
+        digitalWrite(ledPin, LOW);
+        delay(1000);
+}
+</pre><p>Es el mismo código que hemos usado con simuino para simular el comportamiento. Ahora lo veremos realmente en un arduino, pero antes es bueno entender como funcionan los programas en Arduino.</p><p>La estructura básica del lenguaje de programación de Arduino es bastante simple y se compone de al menos <b>dos partes</b>. Estas dos partes necesarias, o funciones, encierran bloques que contienen declaraciones, estamentos o instrucciones.</p><pre>void setup() //Primera Parte
+{
+  estamentos;
+}
+void loop() //Segunda Parte
+{
+  estamentos;
+}
+</pre><p>En donde <b>setup()</b> es la parte encargada de recoger la configuración y <b>loop()</b> es la que contiene el programa que se ejecutará cíclicamente (de ahí el término loop –bucle-). Ambas funciones son necesarias para que el programa trabaje.</p><p>En nuestro caso hemos declarado antes de nada una variable int llamada ledPin. De ese modo indicamos que pin será el que pondremos en modo OUTPUT. <b>Pinmode</b> básicamente acepta 2 modos: <b>OUTPUT</b> e <b>INPUT</b>.</p><p>Es dentro de setup() donde indicaremos si un PIN o varios son de entrada o de salida (I/O). En nuestro programa solo vamos a indicar que el PIN 13 es de salida.</p><pre>        pinMode(ledPin, OUTPUT);
+</pre><p>El programa pasará por setup() una vez y cargará los datos que necesita. Luego irá a loop() y ejecutará en bucle lo que escribamos allí. En nuestro caso esto:</p><pre>        digitalWrite(ledPin, HIGH);
+        delay(1000);
+        digitalWrite(ledPin, LOW);
+        delay(1000);
+</pre><p>Ese código mandará alimentación por el pin13 (5v HIGH y 0v para LOW) y luego dejará de enviar esperando un segundo (delay 1000). Si compilamos y mandamos a arduino el código veremos esto:</p><p><img class="alignnone size-full wp-image-3943" src="https://mierda.tv/wp-contenido/uploads/2017/11/Pin13luces.gif" alt="" width="500" height="500" /></p><p>&nbsp;</p><h3><span id="Nuestro_segundo_programa:_Encendiendo_3_leds_externos" class="mw-headline">Nuestro segundo programa: Encendiendo 3 leds externos</span></h3><p>Ahora vamos a configurar 3 pines como OUTPUT. Servirán para iluminar 3 Leds, uno rojo, uno verde y uno azul.</p><p>Enchufaremos a cada uno de ellos gnd y el pin correspondiente al positivo (la pata más larga de los leds).</p><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3944" src="https://mierda.tv/wp-contenido/uploads/2017/11/Arduino-led-patillaje.png" alt="" width="400" height="300" /></p><p>Para ello usaremos una placa de pruebas (Protoboard o breadboard) temporal.</p><pre>int ledPinAzul = 2;
+int ledPinRojo = 3;
+int ledPinVerde = 4;
+
+void setup() {
+        pinMode(ledPinAzul, OUTPUT);
+        pinMode(ledPinRojo, OUTPUT);
+        pinMode(ledPinVerde, OUTPUT);
+}
+
+void loop() {
+        digitalWrite(ledPinAzul, HIGH);
+        digitalWrite(ledPinRojo, HIGH);
+        digitalWrite(ledPinVerde, HIGH);
+        delay(1000);
+        digitalWrite(ledPinAzul, LOW);
+        digitalWrite(ledPinRojo, LOW);
+        digitalWrite(ledPinVerde, LOW);
+        delay(1000);
+}
+
+
+<img class="alignnone size-full wp-image-3945" src="https://mierda.tv/wp-contenido/uploads/2017/11/Leds.jpg" alt="" width="1067" height="600" /></pre><p>&nbsp;</p><p>Como vemos es más de lo mismo. Para crear luz blanca se precisa de leds RGB (RGB). En nuestro caso hemos encendido 3 leds de forma intermitente y sin control alguno. En el estado HIGH pasarán 5v y en el estado LOW 0v. Luego veremos que colocar los LEDs a pelo es una mala idea.</p><h3><span id="Nuestro_tercer_programa:_Un_pulsador_y_un_LED" class="mw-headline">Nuestro tercer programa: Un pulsador y un LED</span></h3><p>Es necesario este material:</p><ul><li>Un LED azul (por ejemplo).</li><li>Un pulsaodor.</li><li>Cables.</li><li>Arduino Uno Rev. 3.</li></ul><p><img class="alignnone size-full wp-image-3947" src="https://mierda.tv/wp-contenido/uploads/2017/11/Arduinopulsador.jpg" alt="" width="1067" height="600" /></p><p>&nbsp;</p><p><b>La conexión es simple.</b></p><p>Conectamos GND a la pata corta del LED. Conectamos la pata larga del LED a 2 sitios: Al Pin 2 y a uno de los lados del pulsador. Conectamos el lado opuesto diagonal del pulsador a la salida de 5v del arduino.</p><p>El programa podría ser este:</p><pre>int pinLectura = 2; // Usaremos este pin para leer el estado del LED.
+int statusPulsador = 0; // Por defecto lo ponemos a 0 y si se pulsa cambia a 1.
+
+void setup() {
+  pinMode(pinLectura, INPUT); // El PIN 2 en modo INPUT
+  Serial.begin(9600); // Indicamos 9600 baudios para el puerto serie.
+}
+
+void loop() {
+  statusPulsador = digitalRead(pinLectura); // Almacenamos en variable el estado del pulsador
+  if (statusPulsador == 1){ // Si es 1 es que esta pulsado
+     Serial.print("Pulsador activado\n"); // imprimimos por el puerto serie el mensaje.
+  }
+}
+</pre><p>Lo peculiar es que tenemos un programa en el que por fin hemos usado un if para comprobar si la entrada en un PIN es HIGH o es LOW (1 o 0) y que hemos usado el serial para escribir un mensaje que puede verse por pantalla en arduino IDE si activamos &#8220;Monitor serial&#8221;.</p><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3948" src="https://mierda.tv/wp-contenido/uploads/2017/11/Arduinoserialwindow.png" alt="" width="1362" height="733" /></p><p>&nbsp;</p><h3><span id="Comentarios_en_el_c.C3.B3digo" class="mw-headline">Comentarios en el código</span></h3><ul><li>Bloques de comentarios.<pre>/*... */</pre></li><li>Linea de comentarios.<pre>//</pre></li></ul><p>Los <b>bloques de comentarios</b>, o comentarios multi-línea son áreas de texto ignorados por el programa que se utilizan para las descripciones del código o comentarios que ayudan a comprender el programa. Comienzan con / * y terminan con * / y pueden abarcar varias líneas.</p><pre>/* Esto es un bloque de comentarios bla bla bla
+y es importante no olvidarse de cerrarlo adecuadamente
+para que la cosa funcione bien. */
+</pre><p>Los comentarios son ignorados por el compilador y no ocupan espacio en la memoria de Arduino. Pueden ser utilizados con generosidad.</p><p><b>Línea de comentarios</b></p><p>Una línea de comentario empieza con // y terminan con la siguiente línea de código. Al igual que los comentarios de bloque, los de línea son ignoradas por el programa y no ocupan espacio en la memoria.</p><pre>// esto es un comentario</pre><p>Una línea de comentario se utiliza a menudo después de una instrucción, para proporcionar más información acerca de lo que hace esta o para recordarla más adelante.</p><h3><span id="Estructura_de_un_sketch" class="mw-headline">Estructura de un sketch</span></h3><ul><li>Declaración de variables al inicio.</li><li>setup()</li><li>loop()</li><li>Funciones</li></ul><h3><span id="Variables_y_tipos_de_datos" class="mw-headline">Variables y tipos de datos</span></h3><ul><li>Declaración de variables.</li></ul><p>bla bla bal</p><ul><li>Utilización de variables.</li></ul><p>ble ble ble</p><ul><li>Tipos de datos:<ul><li>byte</li><li>int</li><li>long</li><li>float</li><li>arrays</li></ul></li></ul><p>describir los tipos de datos. blu blu blu</p><h3><span id="Entradas_y_Salidas_Digitales" class="mw-headline">Entradas y Salidas Digitales</span></h3><ul><li>pinMode(pin, mode)</li><li>digitalRead(pin)</li><li>digitalWrite(pin, value)</li></ul><p>Es posible utilizar también los pines analógicos como digitales.</p><h3><span id="Entradas_y_Salidas_Anal.C3.B3gicas" class="mw-headline">Entradas y Salidas Analógicas</span></h3><ul><li>pinMode(pin, mode)</li><li>analogRead(pin)</li><li>analogWrite(pin, value)</li></ul><h3><span id="Nuestro_cuarto_programa:_Luz_de_bajo_consumo_temporizada_para_ba.C3.B1os" class="mw-headline">Nuestro cuarto programa: Luz de bajo consumo temporizada para baños</span></h3><p>Normalmente la gente suele entrar al baño a hacer sus necesidades y no precisa de mucho tiempo para ello. Unos minutos y andan listos. Lo que ocurre normalmente es que nos dejamos las luces del baño dadas cuando no las necesitamos. Para solucionar eso se puede hacer un sencillo programa que incorpora luces led (o una) y un pulsador.</p><p><img class="alignnone size-full wp-image-3949" src="https://mierda.tv/wp-contenido/uploads/2017/11/Luz-baño.png" alt="" width="2049" height="1443" /></p><pre>int pulsador = 4;
+int led = 5;
+int status;
+
+void setup() {
+  pinMode(pulsador, INPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  status = digitalRead(pulsador);
+  if (status==HIGH){
+    digitalWrite(led,HIGH);
+    delay(60000);
+    digitalWrite(led,LOW);
+  }
+}
+</pre><p>Se puede variar el tiempo que tardará</p><h3><span id="Resistencias_para_los_leds" class="mw-headline">Resistencias para los leds</span></h3><p>Hasta ahora no hemos usado resistencias con los leds. <b>Es una mala idea y una mala practica no ponerles una resistencia.</b></p><p>El LED se caracteriza por su forward voltage (Vf), el voltaje que hay que aplicar en sus polos para que se ilumine, y la corriente (If) que fluye por él a ese voltaje. Si pasa muy poca corriente no se ilumina, <b>si en cambio pasa mucha corriente… ¡lo quemas!</b></p><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3950" src="https://mierda.tv/wp-contenido/uploads/2017/11/Led-vf-if.png" alt="" width="343" height="187" /></p><p>&nbsp;</p><p>Lo ideal es que tengamos una hoja de datos del LED que vamos a usar, pero la realidad es que muchas veces el típico LED que suele venir en los kits arduino (LEDs de 5mm) no trae información alguna.</p><p><b>El amperio</b> (símbolo A) es la unidad de intensidad (I) de corriente eléctrica. <b>El voltio</b> (Símbolo V) es la unidad de voltaje, tensión o diferencia de potencial.</p><p>Los LEDs que usaremos en las breadboards son de <b>2,1V y 20mA,</b></p><p>La placa arduino trabaja con <b>5V o 3.3V</b> y eso es por tanto <b>un voltaje mayor para el que está diseñado el LED.</b> Estará pasando mayor voltaje entre sus polos y se deteriorará el LED.</p><p><b>La solución es ponerle una resistencia.</b></p><p><b>La Ley de Ohm</b> relaciona el valor de resistencia con el voltaje y la corriente que la atraviesa. Vf tiene que ser <b>2,1V</b>. Si el pin de mi microcontrolador da <b>5V</b>, el voltaje que debe caer por la resistencia es 5V – 2,1V = <b>2,9V</b>.</p><p><b>V = I·R</b></p><p>despejando: <b>R = V/I</b></p><p>Tenemos que V es 2,9V y que I es 20mA</p><p>Por lo que <b>R = 2,9V / 0,02A = 145 Ohm.</b></p><p><b>Resistencias de 145 Ohm</b> necesitaremos. Si no tenemos una resistencias de 145 Ohm seleccionaremos una por encima.</p><h3><span id="Fritzing" class="mw-headline">Fritzing</span></h3><p>Se trata de un programa que nos vendrá de perlas para crear gráficos del arduino y las conexiones con diferentes elementos.</p><p><b>website:</b> <a class="external free" href="http://fritzing.org" rel="nofollow">http://fritzing.org</a></p><p>Instalación en Debian:</p><pre>apt-get install fritzing
+
+<img class="alignnone size-full wp-image-3951" src="https://mierda.tv/wp-contenido/uploads/2017/11/Fritzing.png" alt="" width="1366" height="741" /></pre><p>&nbsp;</p><h3><span id="Trabajar_desde_la_l.C3.ADnea_de_comandos_con_nuestro_editor_de_textos_favorito" class="mw-headline">Trabajar desde la línea de comandos con nuestro editor de textos favorito</span></h3><p>Si nos gusta usar nano, vim, emacs, joe, &#8230; podemos usar estos editores para programar arduino. Nada nos impide que los archivos *.ino sean editados mediante estos editores no obstante perderemos la posibilidad de actualizar el arduino con nuestros programas. Eso lo solucionamos con <b>platformio.</b></p><p><b>Instalación</b> de platformio:</p><pre>python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"</pre><p>Una vez instalado podemos visualizar la lista de placas que soporta. En nuestro caso usaremos un arduino uno de modo que esa es la que tendremos que indicar posteriormente.</p><pre>platformio boards</pre><p>Nos vamos a un directorio o lo creamos:</p><pre>mkdir prueba
+cd prueba
+platformio init --board=uno
+cd src
+nano/vi/emacs prueba.ino
+</pre><p>Metemos nuestro código allí.</p><p>Ahora simplemente si queremos compilar el programa y mandarlo a arduino:</p><pre>platformio run -t upload</pre><p>Si queremos dejar limpio de programas el arduino:</p><pre>platformio run -t clean</pre><p>Si deseamos monitorizar el puerto serie:</p><pre>platformio device monitor</pre><h3><span id="Monitor_serie_desde_l.C3.ADnea_de_comandos" class="mw-headline">Monitor serie desde línea de comandos</span></h3><p>Monitorizar variables por el puerto serie nos puede ayudar a depurar nuestro programa.</p><p>Si utilizamos platformio podemos hacerlo así:</p><pre>platformio device monitor</pre><p>Si no usamos platformio y utilizamos por ejemplo el Arduino IDE eso se puede hacer en &#8220;Herramientas &#8211;&gt; Monitor serial&#8221;.</p><p>Otra opción es usar por ejemplo <b>ttylog</b>. En debian puede instalarse así:</p><pre>apt-get install ttylog</pre><p>Y podemos utilizarlo por ejemplo así:</p><pre>ttylog -b 9600 -d /dev/ttyACM0</pre><h3><span id="Placa_de_Pruebas_y_modelos_3D_para_unirlas_a_Arduino" class="mw-headline">Placa de Pruebas y modelos 3D para unirlas a Arduino</span></h3><p>Una placa de pruebas (en inglés: protoboard o breadboard) es un tablero con orificios que se encuentran conectados eléctricamente entre sí de manera interna, habitualmente siguiendo patrones de líneas, en el cual se pueden insertar componentes electrónicos y cables para el armado y prototipado de circuitos electrónicos y sistemas similares.</p><p>Para trabajar con Arduino Uno y una placa de pruebas podemos optar por imprimir en 3D este diseño: <a href="https://www.thingiverse.com/thing:242348">https://www.thingiverse.com/thing:242348</a></p><p><img class="alignnone size-full wp-image-3952" src="https://mierda.tv/wp-contenido/uploads/2017/11/Arduino_sujetador01.jpg" alt="" width="1024" height="576" /></p><p><img class="alignnone size-full wp-image-3953" src="https://mierda.tv/wp-contenido/uploads/2017/11/Arduino_sujetador02.jpg" alt="" width="1024" height="576" /></p><p>De esa forma el arduino y la placa estarán a la misma distancia siempre y podremos cablear sin mucho problema.</p><p>&nbsp;</p><h3><span id="Controlando_Pulsador_de_luces_led_compradas_en_alcampo" class="mw-headline">Controlando Pulsador de luces led compradas en alcampo</span></h3><p>Podemos construir nuestros propios diseños de algo o tambien usar otros ya existentes. Un ejemplo es el del pulsador de luces led.</p><p>En el Alcampo venden por un euro con 50 céntimos unos leds con caja pulsador. Son estos que se ven en la siguiente foto:</p><p><img class="alignnone size-full wp-image-3954" src="https://mierda.tv/wp-contenido/uploads/2017/11/Leds_alcampo.jpg" alt="" width="1024" height="576" /></p><p>Lo bueno que tienen es que llevan <b>un led, una resistencia, un pulsador, muelles y 4 pilas</b>. Todo eso por un euro y medio no es mal precio pero sobre todo lo bueno es que tenemos un pulsador grande que no tendremos que imprimirnos y que funciona bien.</p><p>Con arduino podemos abrir estos cacharros y conectar a algún pin analógico el pulsador (tiene 3 patas, una libre que es la que conectaremos al pin INPUT analógico).</p><p><img class="alignnone size-full wp-image-3955" src="https://mierda.tv/wp-contenido/uploads/2017/11/fases.png" alt="" width="918" height="538" /></p><p>&nbsp;</p><p>De esta forma sacamos 2 cables del cacharro que usaremos para saber cuando está encendido y cuando no lo está (con la función analogRead()).</p><p>Un ejemplo de código con el pin A0 a la espera de datos:</p><p>&nbsp;</p><pre>int pulsador1 = A0;
+
+void setup(){
+  pinMode(pulsador1, INPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  int lectura = analogRead(pulsador1);
+  Serial.print(lectura);
+  Serial.print("\n");
+  delay(500);
+}
+</pre><p>Cuando se pulse el cacharro se encenderá la luz y nos ofrecerá valores diferentes de 0 por el puerto serie.</p><p>Una idea es que al monitorizar luces podemos saber cuando se encienden normalmente, llevar estadísticas de estas o por ejemplo simplemente que se nos notifique por email que la luz del baño está encendida.</p><p>Otras finalidades pueden ser que suene un sonido, que pongamos 3 de estos pulsadores y juguemos a un trivial. Quien pulsa antes tiene que contestar ! :).</p><p>En fin. es un ejemplo para usar analogRead() y cacharros externos a los que podemos siempre enchufar un arduino para monitorizarlos o controlarlos.</p><h3><span id="Ejemplos_de_arrays" class="mw-headline">Ejemplos de arrays</span></h3><p>Un array es un medio de guardar un conjunto de objetos de la misma clase. Se accede a cada elemento individual del array mediante un número entero denominado índice. <b>0 es el índice del primer elemento</b>.</p><p>Este <b>ejemplo</b> puede servir para entender el array:</p><pre>// Ejemplos de array
+
+char mensaje[3] = "hola";
+int pin[] = {2, 3, 4, 5, 6, 7};
+
+void setup(){
+        Serial.begin(9600);
+        for (int x = 0; x &lt; 6; x++){
+                pinMode(pin[x], OUTPUT);
+        }
+}
+
+void loop() {
+        Serial.print(mensaje[0]);
+        Serial.print(mensaje[1]);
+        Serial.print(mensaje[2]);
+        Serial.print(mensaje[3]);
+        Serial.print("\n");
+        delay(3000); // tras 3 segundos los pines se activan. poner un led para verlo.
+        for (int y = 0; y &lt; 6; y++){
+                digitalWrite(pin[y], HIGH);
+        }
+        delay(1000);
+}
+</pre><p>El array nos puede servir para almacenar por ejemplo valores de diferentes sensores. En el ejemplo se ve como se usa para mostrar un mensaje que podrá verse por el monitor serial y al mismo tiempo se usa para inicializar el modo de los pines 2,3,4,5,6 y 7 como OUTPUT. En el loop se ve como se usa de nuevo un for para activar los pines. Si colocamos un led con una resistencia a GND y luego en la pata positiva le vamos cambiando el cable de un pin del arduino a otro veremos que del 2 al 7 se ilumina, pero en el 8 por ejemplo no.</p><p><img class="alignnone size-full wp-image-3956" src="https://mierda.tv/wp-contenido/uploads/2017/11/Leddebugging.jpg" alt="" width="1024" height="576" /></p><p><b>Array de 2 dimensiones.</b></p><p>Para entenderlo imaginemos un tablero de ajedrez (o pongámoslo de ejemplo).</p><p><img class="alignnone size-full wp-image-3957" src="https://mierda.tv/wp-contenido/uploads/2017/11/Tablero-de-ajedrez.png" alt="" width="280" height="288" /></p><p>&nbsp;</p><p>Tiene 8&#215;8 = 64 casillas.</p><pre>// Ejemplo de array 2d
+
+int x;
+int y;
+int tablero[8][8] = {
+        {1,0,1,0,1,0,0,1},
+        {0,0,0,0,0,0,1,0},
+        {0,1,1,1,1,1,0,0},
+        {0,0,0,0,1,0,0,0},
+        {0,0,0,1,0,0,0,0},
+        {0,0,1,0,0,0,0,0},
+        {0,1,0,0,0,1,1,0},
+        {1,0,0,0,0,0,0,0},
+};
+
+void setup(){
+        Serial.begin(9600);
+}
+
+void loop() {
+        for (int x = 0; x &lt; 8; x++){
+                for (int y = 0; y &lt; 8; y++){
+                        Serial.print(tablero[x][y]);
+                        delay(100);
+                }
+                Serial.print("\n");
+        }
+
+        Serial.print("\n--------\n");
+        delay(4000);
+}
+</pre><p>Si compilamos el programa y lo cargamos en un arduino uno veremos algo como lo que se ve en la siguiente captura (en el lado izquierdo):</p><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3958" src="https://mierda.tv/wp-contenido/uploads/2017/11/Array2d.png" alt="" width="1366" height="741" /></p><p>Un array que contiene otro array y un for que anida otro for para ir leyendo las posiciones. He colocado 1 y 0 como valores pero si por ejemplo fuesen fichas de ajedrez tendriamos que darle un valor diferente a cada ficha. Por ejemplo:</p><p>vacío = 0 peón = 1 torre = 2 caballo = 3 &#8230;</p><p>Tendríamos la posición inicial de las fichas y tendríamos que cargar nuevos movimientos en la posición en la que se muevan. Por ejemplo así:</p><p>tablero[0][0] = 0;</p><p>Eso cargaria en la posición 0,0 del tablero el valor 0, es decir, ninguna ficha allí.</p><p>Esto es un ejemplo y es bueno controlar los arrays 2d para por ejemplo manejar <b>matrices de leds.</b></p><h3><span id="Control_de_tiempo" class="mw-headline">Control de tiempo</span></h3><ul><li><b>delay()</b></li></ul><p>Permite generar pausas en el programa de x tiempo. El tiempo se lo indicaremos en milimetros. Ejemplo: delay(1000); pausará 1 segundo el programa. Se utiliza dentro de la función loop() y de otras funciones que generemos.</p><ul><li><b>millis()</b></li></ul><p>Devuelve el número de milisegundos desde que la tarjeta Arduino empezó a ejecutar el programa actual. Este número se desbordará después de aproximadamente 50 días.</p><ul><li><b>micros()</b></li></ul><p>Devuelve el número de microsegundos desde que la tarjeta Arduino empezó a ejecutar el programa actual. Este número se desbordará después de aproximadamente 70 minutos. En las tarjetas Arduino de 16 MHz (por ejemplo Nano), esta función tiene una resolución de cuatro microsegundos (es decir, el valor devuelto es siempre un múltiplo de cuatro). En tarjetas de 8 MHz Arduino (por ejemplo, el LilyPad), esta función tiene una resolución de ocho microsegundos.</p><h3><span id="N.C3.BAmeros_aleatorios" class="mw-headline">Números aleatorios</span></h3><p><b>randomSeed(seed)</b> &#8211; Establece un valor, o semilla, como punto de partida para la función random().</p><pre>randomSeed(valor);</pre><p>Debido a que <b>Arduino es incapaz de crear un verdadero número aleatorio</b>, randomSeed le permite colocar una variable, constante, u otra función de control dentro de la función random, lo que permite generar números aleatorios al azar. Hay una variedad de semillas, o funciones, que pueden ser utilizados en esta función, incluido millis() o incluso analogRead() que permite leer ruido eléctrico a través de un pin analógico.</p><p><b>random(max)</b> &#8211; Devuelve un valor aleatorio entre 0 y max.</p><p><b>random(min, max)</b> &#8211; La función random devuelve un número aleatorio entero de un intervalo de valores especificado entre los valores min y max.</p><p>El siguiente ejemplo genera un valor aleatorio entre 0 y 255 y lo envía a una salida analógica:</p><pre>              
+int randNumber;   // variable que almacena el valor aleatorio
+int led = 10;     // define led como 10
+
+void setup() {}   // no es necesario configurar nada
+
+void loop() {
+    randomSeed(millis());    // genera una semilla para aleatorio a partir de la función millis()
+    randNumber = random(255);    // genera número aleatorio entre 0 y 255 
+    analogWrite(led, randNumber); // envía a la salida led de tipo PWM el valor 
+    delay(500);     // espera 0,5 seg.
+}
+</pre><p>Para generar números aleatorios más aleatorios es buena cosa utilizar la función analogRead() así:</p><ul><li>Pilllamos un cable y le quitamos la protección plástica para que se quede al aire.</li><li>Enchufamos el cable a un pin analógico (por ejemplo a A0) como INPUT.</li><li>Leemos con analogRead() el ruido del ambiente.</li><li>Filtramos para coger solamente el rango que nos interese.</li></ul><h3><span id="Control_de_un_Potenci.C3.B3metro" class="mw-headline">Control de un Potenciómetro</span></h3><p>Suelen llevar 3 pines. Uno el +, otro el &#8211; y del medio que ofrece el valor regulado. En nuestro caso si enchufamos el del medio a la función analogRead() en por ejemplo el pin A0 podemos leer el valor del regulador y aplicarlo a por ejemplo un zumbador. El valor irá entre 0 a 1024.</p><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3959" src="https://mierda.tv/wp-contenido/uploads/2017/11/Potentiometer.jpg" alt="" width="245" height="287" /></p><p><img class="alignnone size-full wp-image-3960" src="https://mierda.tv/wp-contenido/uploads/2017/11/Potenciometro.png" alt="" width="594" height="537" /></p><p>Ejemplo de código:</p><pre>int potPin = A0;
+int potValor = 0;
+
+void setup() {
+  pinMode(potPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  potValor = analogRead(potPin);
+  Serial.print(potValor);
+  Serial.print("\n");
+}
+</pre><h3><span id="Control_de_un_Zumbador_con_un_potenci.C3.B3metro" class="mw-headline">Control de un Zumbador con un potenciómetro</span></h3><p>Explicar bien en otro momento</p><pre>int potPin = A0;
+int speakerPin = 2;
+int potValor = 0;
+int speakerValor = 0;
+
+void setup() {
+  pinMode(potPin, INPUT);
+  pinMode(speakerPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  potValor = analogRead(potPin);
+  tone(speakerPin,potValor);
+  Serial.print(potValor);
+  Serial.print("\n");
+}
+</pre><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3961" src="https://mierda.tv/wp-contenido/uploads/2017/11/Zumbadorypotenciometro.jpeg" alt="" width="1067" height="600" /></p><h3><span id="Programa_usando_potenciometro.2C_zumbador_y_display_de_7_segmentos" class="mw-headline">Programa usando potenciometro, zumbador y display de 7 segmentos</span></h3><p>Explicar bien en otro momento</p><p><img class="alignnone size-full wp-image-3962" src="https://mierda.tv/wp-contenido/uploads/2017/11/ledsegs.png" alt="" width="665" height="278" /></p><p>3 y 8 a GND (los del medio).</p><pre>int potPin = A0;
+int speakerPin = A1;
+int potValor = 0;
+int speakerValor = 0;
+
+byte seven_seg_digits[10][7] = {
+  { 1,1,1,1,1,1,0 },  // = 0
+  { 0,1,1,0,0,0,0 },  // = 1
+  { 1,1,0,1,1,0,1 },  // = 2
+  { 1,1,1,1,0,0,1 },  // = 3
+  { 0,1,1,0,0,1,1 },  // = 4
+  { 1,0,1,1,0,1,1 },  // = 5
+  { 1,0,1,1,1,1,1 },  // = 6
+  { 1,1,1,0,0,0,0 },  // = 7
+  { 1,1,1,1,1,1,1 },  // = 8
+  { 1,1,1,0,0,1,1 }   // = 9
+};
+
+void setup() {
+  pinMode(potPin, INPUT);
+  pinMode(speakerPin, OUTPUT);
+  Serial.begin(9600);
+  pinMode(2, OUTPUT);  
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  writeDot(0);  
+  
+}
+
+void loop() {
+  potValor = analogRead(potPin);
+  tone(speakerPin,potValor);
+  Serial.print(potValor);
+  Serial.print("\n");
+  if (potValor &lt; 100 &amp;&amp; potValor &gt; 0){
+    sevenSegWrite(0);
+  }
+  if (potValor &lt; 200 &amp;&amp; potValor &gt; 100){
+    sevenSegWrite(1);
+  }
+  if (potValor &lt; 300 &amp;&amp; potValor &gt; 200){
+    sevenSegWrite(2);
+  }
+  if (potValor &lt; 400 &amp;&amp; potValor &gt; 300){
+    sevenSegWrite(3);
+  }  
+  if (potValor &lt; 500 &amp;&amp; potValor &gt; 400){
+    sevenSegWrite(4);
+  }
+  if (potValor &lt; 600 &amp;&amp; potValor &gt; 500){
+    sevenSegWrite(5);
+  }  
+  if (potValor &lt; 700 &amp;&amp; potValor &gt; 600){
+    sevenSegWrite(6);
+  }    
+  if (potValor &lt; 800 &amp;&amp; potValor &gt; 700){
+    sevenSegWrite(7);
+  }  
+  if (potValor &lt; 900 &amp;&amp; potValor &gt; 800){
+    sevenSegWrite(8);
+  }    
+  if (potValor &lt; 1000 &amp;&amp; potValor &gt; 900){
+    sevenSegWrite(9);
+  }  
+}
+
+
+void writeDot(byte dot) {
+  digitalWrite(9, dot);
+}
+   
+void sevenSegWrite(byte digit) {
+  byte pin = 2;
+  for (byte segCount = 0; segCount &lt; 7; ++segCount) {
+    digitalWrite(pin, seven_seg_digits[digit][segCount]);
+    ++pin;
+  }
+}
+</pre><p><img class="alignnone size-full wp-image-3963" src="https://mierda.tv/wp-contenido/uploads/2017/11/7segmentoszumbadorpotenciometro1.jpg" alt="" width="1024" height="576" /></p><p><img class="alignnone size-full wp-image-3964" src="https://mierda.tv/wp-contenido/uploads/2017/11/7segmentoszumbadorpotenciometro2.jpg" alt="" width="1024" height="576" /></p><h3><span id="Dise.C3.B1os_3D_para_elementos_de_Arduino_uno" class="mw-headline">Diseños 3D para elementos de Arduino uno</span></h3><p>Algunos diseños que pueden ser de utilidad para elementos que se suelen utilizar con arduino:</p><ul><li>Organizador de cables: <a class="external free" href="http://www.thingiverse.com/thing:871228" rel="nofollow">http://www.thingiverse.com/thing:871228</a></li><li>Manilla para potenciómetro: <a class="external free" href="http://www.thingiverse.com/thing:695926" rel="nofollow">http://www.thingiverse.com/thing:695926</a></li><li>Manilla para potenciómetro: <a class="external free" href="http://www.thingiverse.com/thing:2179480" rel="nofollow">http://www.thingiverse.com/thing:2179480</a></li><li>Manilla para potenciómetro: <a class="external free" href="http://www.thingiverse.com/thing:2144786" rel="nofollow">http://www.thingiverse.com/thing:2144786</a></li><li>Caja para sujetar pila: <a class="external free" href="http://www.thingiverse.com/thing:2144462" rel="nofollow">http://www.thingiverse.com/thing:2144462</a></li><li>Objeto para crear un display de 7 segmentos creado con leds: <a class="external free" href="http://www.thingiverse.com/thing:973646" rel="nofollow">http://www.thingiverse.com/thing:973646</a></li><li>Objeto para crear un display de 7 segmentos creado con leds: <a class="external free" href="http://www.thingiverse.com/thing:783677" rel="nofollow">http://www.thingiverse.com/thing:783677</a></li><li>Base para escanear objetos fisicos a objetos 3D digitalizados: <a class="external free" href="http://www.thingiverse.com/thing:37835" rel="nofollow">http://www.thingiverse.com/thing:37835</a></li></ul><h3><span id="Programaci.C3.B3n_colectiva_mediante_pad" class="mw-headline">Programación colectiva mediante pad</span></h3><p>Un pad permite que la gente pueda conectar a una url mediante el navegador ( por ejemplo: <a class="external free" href="https://pad.elbinario.net/p/arduino" rel="nofollow">https://pad.elbinario.net/p/arduino</a> ) y permite que este pueda ser exportado en texto plano.</p><p>Usando un pad etherpad esa url de pad quedará así: <a class="external free" href="https://pad.elbinario.net/p/arduino/export/txt" rel="nofollow">https://pad.elbinario.net/p/arduino/export/txt</a></p><p>Por tanto desde línea de comandos se puede bajar con wget por ejemplo:</p><pre>wget -q "https://pad.elbinario.net/p/arduino/export/txt" -O arduino.ino</pre><p>y abrilo con el editor que queramos y compilarlo cuando se precise. O no abrirlo y simplemente actualizarlo si usamos platformio.</p><div class='rp4wp-related-posts'><h3>Más mierda posiblemente relacionada</h3><ul><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2016/08/04/dispositivo-para-controlar-la-sequedad-del-suelo/'>Dispositivo para controlar la sequedad del suelo</a><p>Riégame es un dispositivo para controlar la sequedad del suelo de una planta. Puedes montarlo&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2016/08/02/dispositivo-para-controlar-la-temperatura-de-bochorno/'>Dispositivo para controlar la temperatura de bochorno</a><p>Un dispositivo para medir la temperatura del ambiente, la humedad y la temperatura de bochorno&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2017/05/13/controlar-un-motor-cc-con-arduino/'>Controlar un motor cc con Arduino</a><p>Arduino no dispone de potencia suficiente para mover actuadores (un motor es un actuador por&hellip;</p></div></li></ul></div></div><div class="meta bottom section-inner"><p class="tags"> #<a href="https://mierda.tv/tag/arduino/" rel="tag">arduino</a> #<a href="https://mierda.tv/tag/iniciacion-a-arduino/" rel="tag">iniciación a arduino</a></p></div><div class="post-pagination section-inner"><div class="previous-post"> <a href="https://mierda.tv/2017/11/25/10-juegos-libres-molones-para-gnu-linux/" rel="prev"><span>10 Juegos libres molones para GNU/Linux</span></a></div><div class="next-post"> <a href="https://mierda.tv/2017/12/01/debian9-thin-redmine-nginx/" rel="next"><span>Instalar redmine en Debian 9 con Thin y Nginx</span></a></div></div><div class="section-inner wide"><div class="comments"><h3 class="comment-reply-title">2 comentarios</h3><div class="comment even thread-even depth-1" id="li-comment-6608"><div id="comment-6608"><header class="comment-meta"> <span class="comment-author"> <cite> puppet </cite> </span> <span class="comment-date"> <a class="comment-date-link" href="https://mierda.tv/2017/11/26/iniciacion-a-arduino/#comment-6608" title="27 noviembre, 2017 a 1:31 pm">27 noviembre, 2017</a> </span> <span class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='https://mierda.tv/2017/11/26/iniciacion-a-arduino/?replytocom=6608#respond' onclick='return addComment.moveForm( "comment-6608", "6608", "respond", "3934" )' aria-label='Responder a puppet'>Contestar</a></span></header><div class="comment-content entry-content"><p>Pedazo de articulo, muchas gracias por el minucioso detalle y por compartirlo.<br /> +1000</p></div><div class="comment-actions"></div></div></div><div class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-6610"><div id="comment-6610"><header class="comment-meta"> <span class="comment-author"> <cite> <a href='https://victorhckinthefreeworld.com' rel='external nofollow' class='url'>victorhck</a> </cite> </span> <span class="comment-date"> <a class="comment-date-link" href="https://mierda.tv/2017/11/26/iniciacion-a-arduino/#comment-6610" title="28 noviembre, 2017 a 9:58 am">28 noviembre, 2017</a> </span> <span class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='https://mierda.tv/2017/11/26/iniciacion-a-arduino/?replytocom=6610#respond' onclick='return addComment.moveForm( "comment-6610", "6610", "respond", "3934" )' aria-label='Responder a victorhck'>Contestar</a></span></header><div class="comment-content entry-content"><p>MUY BUENO!!!</p><p>Gran artículo!!!</p></div><div class="comment-actions"></div></div></div></div><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/11/26/iniciacion-a-arduino/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://mierda.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><label for="comment">Comentario</label><textarea autocomplete="nope"  id="01c8b0b8dd"  name="01c8b0b8dd"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="nope" style="padding:0;clip:rect(1px, 1px, 1px, 1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;" tabindex="-1"></textarea><script type="text/javascript">document.getElementById("comment").setAttribute( "id", "035f6dedad8b91243eb0062a7e5804d6" );document.getElementById("01c8b0b8dd").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p><p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p><p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" /> <input type='hidden' name='comment_post_ID' value='3934' id='comment_post_ID' /> <input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p></form></div></div></div><footer class="site-footer section-inner"><p class="copyright">&copy; 2018 <a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></p></footer></main> <script type="text/javascript">jQuery(document).ready( function() { jQuery.post( "https://mierda.tv/wp-admin/admin-ajax.php", { action : "entry_views", _ajax_nonce : "70537a5d8f", post_id : 3934 } ); } );</script> <script type='text/javascript'>var es_widget_page_notices = {"es_email_notice":"Por favor introduce direcci\u00f3n de correo electr\u00f3nico","es_success_message":"Suscripci\u00f3n correcta.","es_success_notice":"\u00a1Suscripci\u00f3n correcta! Consulta tu bandeja de entrada y confirma tu suscripci\u00f3n. Si no ves el correo en unos minutos, consulta la carpeta spam\/correo no deseado.","es_email_exists":"\u00a1Esa direcci\u00f3n de correo electr\u00f3nico ya existe!","es_error":"Ups. Ha sucedido un error inesperado.","es_invalid_email":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","es_try_later":"Por favor, int\u00e9ntalo transcurridos unos minutos","es_ajax_url":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var mcluhan_ajaxpagination = {"ajaxurl":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php","query_vars":"{\"page\":\"\",\"year\":\"2017\",\"monthnum\":\"11\",\"day\":\"26\",\"name\":\"iniciacion-a-arduino\"}"};</script> <script type="text/javascript" defer src="https://mierda.tv/wp-contenido/cache/autoptimize/js/autoptimize_0f440c40192207511c15447e1fc97710.js"></script></body></html>

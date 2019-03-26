@@ -1,0 +1,164 @@
+<!DOCTYPE html><html class="no-js" lang="es-ES"><head><meta http-equiv="content-type" content="text/html" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ><link rel="profile" href="http://gmpg.org/xfn/11"><link type="text/css" media="all" href="https://mierda.tv/wp-contenido/cache/autoptimize/css/autoptimize_dcbc99a7d03052a28dbf604173960da0.css" rel="stylesheet" /><title>SDL en C bajo GNU/Linux 007 – Dibujando una lluvia de estrellas &#8211; [ MIERDA TV ]</title><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Feed" href="https://mierda.tv/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; RSS de los comentarios" href="https://mierda.tv/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; SDL en C bajo GNU/Linux 007 – Dibujando una lluvia de estrellas RSS de los comentarios" href="https://mierda.tv/2017/05/08/sdl-en-c-bajo-gnulinux-007-dibujando-una-lluvia-de-estrellas/feed/" /><link rel='stylesheet' id='mcluhan-fonts-css'  href='https://fonts.googleapis.com/css?family=Archivo:400,400i,600,600i,700,700i&#038;subset=latin-ext' type='text/css' media='all' /> <script type='text/javascript' src='https://mierda.tv/wp-includes/js/jquery/jquery.js'></script> <link rel='https://api.w.org/' href='https://mierda.tv/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mierda.tv/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mierda.tv/wp-includes/wlwmanifest.xml" /><link rel='prev' title='SDL en C bajo GNU/Linux 006 &#8211; Horizontal parallax scrolling' href='https://mierda.tv/2017/05/08/sdl-en-c-bajo-gnulinux-006-horizontal-parallax-scrolling/' /><link rel='next' title='SDL en C bajo GNU/Linux 008 &#8211; Degradados' href='https://mierda.tv/2017/05/09/sdl-en-c-bajo-gnulinux-008-degradados/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://mierda.tv/2017/05/08/sdl-en-c-bajo-gnulinux-007-dibujando-una-lluvia-de-estrellas/" /><link rel='shortlink' href='https://mierda.tv/?p=2793' /><link rel="alternate" type="application/json+oembed" href="https://mierda.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmierda.tv%2F2017%2F05%2F08%2Fsdl-en-c-bajo-gnulinux-007-dibujando-una-lluvia-de-estrellas%2F" /> <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script> <link rel="icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon-1.png" type="image/png"/><link rel="shortcut icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon.png" /></head><body class="post-template-default single single-post postid-2793 single-format-standard"><header class="site-header group"><h1 class="site-title"><a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></h1><p class="site-description">NSFW Fanta text files</p><div class="nav-toggle"><div class="bar"></div><div class="bar"></div></div><div class="menu-wrapper"><ul class="main-menu desktop"><li id="menu-item-9007" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li id="menu-item-9006" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li id="menu-item-9008" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li id="menu-item-9012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li id="menu-item-9011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li id="menu-item-9010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li></ul></div><ul class="social-menu desktop"><li><a href="https://mierda.tv/?s="></a></li><li id="menu-item-10588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></header><div class="mobile-menu-wrapper"><ul class="main-menu mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li><li class="toggle-mobile-search-wrapper"><a href="#" class="toggle-mobile-search">Buscar</a></li></ul><ul class="social-menu mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></div><div class="mobile-search"><div class="untoggle-mobile-search"></div><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab60c4016bb"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab60c4016bb" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form><div class="mobile-results"><div class="results-wrapper"></div></div></div><div class="search-overlay"><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab60c401750"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab60c401750" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form></div><main class="site-content"><article class="post-2793 post type-post status-publish format-standard hentry category-juegos tag-linux tag-pixel tag-sdl tag-sdl-con-c tag-sdl2 tag-sdl2-c tag-tutorial missing-thumbnail"><header class="entry-header section-inner"><h1 class="entry-title">SDL en C bajo GNU/Linux 007 – Dibujando una lluvia de estrellas</h2><div class="meta"> <time><a href="https://mierda.tv/2017/05/08/sdl-en-c-bajo-gnulinux-007-dibujando-una-lluvia-de-estrellas/" title="8 mayo, 2017 6:48 pm">8 mayo, 2017</a></time> <span> En <a href="https://mierda.tv/category/juegos/" rel="category tag"># GAMES</a> </span></div></header><div class="entry-content section-inner"><p><img src="https://mierda.tv/wp-contenido/uploads/2017/05/lluvia.png" alt="" width="640" height="516" class="alignnone size-full wp-image-2811" srcset="https://mierda.tv/wp-contenido/uploads/2017/05/lluvia.png 640w, https://mierda.tv/wp-contenido/uploads/2017/05/lluvia-300x242.png 300w" sizes="(max-width: 640px) 100vw, 640px" /><br /> &nbsp;&nbsp;<br /> Es posible que mucha gente recuerde <strong>&#8220;el juego de la mariquita&#8221;</strong>. Aquí puede verse un ejemplo de estos juegos en los que movías una mariquita (o lo que fuese) por la pantalla para ir creando zonas cerradas que mostrasen un fragmento de una imagen oculta. <strong>Normalmente eran fotos porno</strong> por cierto: <a href="https://www.youtube.com/watch?v=EJSUA88b9zo">https://www.youtube.com/watch?v=EJSUA88b9zo</a><br /> &nbsp;&nbsp;<br /> Para hacer algo similar primero hemos de saber como dibujar un simple pixel en pantalla.<br /> Descarga el código aquí: <a href="https://mierda.tv/wp-content/uploads/2017/05/pixel.zip">pixel.zip</a><br /> &nbsp;&nbsp;<br /> El código creo que se entiende bien si has seguido estos artículos ya que solamente incorporamos un par de funciones nuevas. Si no has leído los anteriores artículos te lo recomiendo: <a href="https://mierda.tv/?s=SDL+en+C">https://mierda.tv/?s=SDL+en+C</a><br /> &nbsp;&nbsp;<br /> Examinemos el código para <strong>dibujar un fondo negro y sobre este fondo un pixel rojo</strong> en la posición x=20 e y=20 :<br /> &nbsp;&nbsp;</p><pre>
+#include &lt;SDL.h&gt;
+#include &lt;stdbool.h&gt;
+
+int main(int argc, char ** argv) {
+
+	SDL_Window * ventana;
+	SDL_Renderer * render;
+	SDL_Event evento;
+	bool quit = false;
+		
+	SDL_Rect fondo = { 0, 0, 640, 480 }; // un rectangulo que ocupará toda la ventana.
+	SDL_Rect pixel = { 0, 0, 1, 1 }; // posicionado en 0,0 con ancho 1 y alto 1, es decir, un pixel arriba a la izquierda.
+
+	/* // Otra forma 
+	SDL_Rect pixel; 
+	pixel.x = 0; // posición x
+	pixel.y = 0; // posición y
+	pixel.w = 1; // ancho
+	pixel.h = 1; // alto
+	*/
+	
+	SDL_Init(SDL_INIT_VIDEO);
+	ventana = SDL_CreateWindow("Ejemplo de dibujar pixel en pantalla",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,640,480,SDL_WINDOW_OPENGL);
+
+	if (ventana == NULL) { printf("No se pudo crear la ventana: %s\n", SDL_GetError());	return 1; }
+	
+	render = SDL_CreateRenderer(ventana, -1, 0);
+	
+	SDL_SetRenderDrawColor(render, 1, 1, 1, 255); // RGB será negro. El cuarto valor es alpha. 255 es opaco.
+	SDL_RenderFillRect(render, &fondo);
+	SDL_RenderDrawPoint(render, 0, 0);
+        SDL_RenderPresent(render); // presentamos el render del fondo.
+	SDL_RenderClear(render); // limpiamos
+
+	SDL_SetRenderDrawColor(render, 255, 0, 0, 255); // RGB será rojo. El cuarto valor es alpha. 255 es opaco.
+	SDL_RenderFillRect(render, &pixel);
+        SDL_RenderDrawPoint(render, 20, 20); // lo posicionamos arriba a la izquierda en x=20 e y=20
+        SDL_RenderPresent(render); // presentamos el render del pixel rojo
+        SDL_RenderClear(render); // limpiamos
+	
+
+	while (!quit) {
+		SDL_WaitEvent(&evento);
+
+		switch (evento.type) {
+			case SDL_QUIT:
+				quit = true;
+				break;
+		}
+
+
+	}
+
+}
+</pre><p>&nbsp;&nbsp;<br /> Al ejecutarlo tendremos algo así (se ve poco el pixel rojo pero se tiene que ver si limpias un poco tu pantalla):<br /> &nbsp;&nbsp;<br /> <img src="https://mierda.tv/wp-content/uploads/2017/05/pixel.png" alt="" width="640" height="516" class="alignnone size-full wp-image-2799" srcset="https://mierda.tv/wp-contenido/uploads/2017/05/pixel.png 640w, https://mierda.tv/wp-contenido/uploads/2017/05/pixel-300x242.png 300w" sizes="(max-width: 640px) 100vw, 640px" /><br /> &nbsp;&nbsp;</p><p>Estás son las funciones nuevas que no habíamos usado aún en esta serie de tutoriales ( o lo que sean):</p><p><a href="https://wiki.libsdl.org/SDL_RenderFillRect">SDL_RenderFillRect</a></p><p><a href="https://wiki.libsdl.org/SDL_SetRenderDrawColor">SDL_SetRenderDrawColor</a></p><p><a href="https://wiki.libsdl.org/SDL_RenderDrawPoint">SDL_RenderDrawPoint</a></p><p><a href="https://wiki.libsdl.org/SDL_RenderClear">SDL_RenderClear</a></p><pre>
+	SDL_SetRenderDrawColor(render, 1, 1, 1, 255); // RGB será negro. El cuarto valor es alpha. 255 es opaco.
+	SDL_RenderFillRect(render, &fondo);
+	SDL_RenderDrawPoint(render, 0, 0);
+        SDL_RenderPresent(render); // presentamos el render del fondo.
+	SDL_RenderClear(render); // limpiamos
+
+	SDL_SetRenderDrawColor(render, 255, 0, 0, 255); // RGB será rojo. El cuarto valor es alpha. 255 es opaco.
+	SDL_RenderFillRect(render, &pixel);
+        SDL_RenderDrawPoint(render, 20, 20); // lo posicionamos arriba a la izquierda en x=20 e y=20
+        SDL_RenderPresent(render); // presentamos el render del pixel rojo
+        SDL_RenderClear(render); // limpiamos
+</pre><p>&nbsp;&nbsp;<br /> Como puede verse no requiere mucho esfuerzo. <strong>Nos permite por ejemplo crear un cielo estrellado.</strong>&nbsp;&nbsp;<br /> Veamos como <strong>podemos hacer un cielo estrellado o mejor, una lluvia de estrellas.</strong><br /> &nbsp;&nbsp;<br /> <strong>Para que no sea tan rollo podemos realizar una lluvia de estrellas</strong><br /> &nbsp;&nbsp;<br /> Aquí el código en un zip para descargar: <a href="https://mierda.tv/wp-content/uploads/2017/05/lluvia.zip">lluvia</a><br /> &nbsp;&nbsp;<br /> Aquí el código para llevar:<br /> &nbsp;&nbsp;</p><pre>
+#include &lt;SDL.h&gt;
+#include &lt;stdbool.h&gt;
+
+
+int main(int argc, char ** argv) {
+
+	SDL_Window * ventana;
+	SDL_Renderer * render;
+	SDL_Event evento;
+	bool quit = false;
+		
+	SDL_Rect fondo = { 0, 0, 640, 480 }; // un rectangulo que ocupará toda la ventana.
+ 
+	SDL_Rect pixel; 
+	pixel.x = 0; // posición x
+	pixel.y = 0; // posición y
+	pixel.w = 1; // ancho
+	pixel.h = 1; // alto
+
+	int xEstrellas[100];
+	int yEstrellas[100];
+
+	int xMax = 640;	int xMin = 1;
+	int yMax = 480;	int yMin = 1;
+
+	int x,y,z;	
+	for (x = 0; x &lt; 100; x++) {	xEstrellas[x] = rand()%(xMax-xMin)+xMin; }
+	for (y = 0; y &lt; 100; y++) {	yEstrellas[y] = rand()%(yMax-yMin)+yMin; }
+		
+	
+	SDL_Init(SDL_INIT_VIDEO);
+	ventana = SDL_CreateWindow("Ejemplo de lluvia de estrellas",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,640,480,SDL_WINDOW_OPENGL);
+
+	if (ventana == NULL) { printf("No se pudo crear la ventana: %s\n", SDL_GetError());	return 1; }
+	
+	render = SDL_CreateRenderer(ventana, -1, 0);
+	
+	SDL_SetRenderDrawColor(render, 1, 1, 1, 255); // RGB será negro. El cuarto valor es alpha. 255 es opaco.
+	SDL_RenderFillRect(render, &fondo);
+	SDL_RenderDrawPoint(render, 0, 0);
+        SDL_RenderPresent(render);
+	SDL_RenderClear(render);
+	
+
+	int contador2 = 1;
+	while (contador2 &lt; 10){
+		for (y = 0; y &lt; 100; y++) {	yEstrellas[y] = rand()%(yMax-yMin)+yMin; }
+		int contador = 1;
+		while (contador &lt; 13) {
+			for (z = 0; z &lt; 100; z++) {
+				yEstrellas[z]=yEstrellas[z]+1;
+				SDL_RenderFillRect(render, &pixel);
+				SDL_RenderDrawPoint(render, xEstrellas[z], yEstrellas[z]);
+			}		
+			SDL_Delay(50);
+			if (contador &gt;= 3 ) { SDL_SetRenderDrawColor(render, 235, 235, 235, 255); }    
+			if (contador &gt;= 4 ) { SDL_SetRenderDrawColor(render, 225, 225, 225, 255); }    
+			if (contador &gt;= 5 ) { SDL_SetRenderDrawColor(render, 215, 215, 215, 255); }    
+			if (contador &gt;= 6 ) { SDL_SetRenderDrawColor(render, 200, 200, 200, 255); }
+			if (contador &gt;= 7 ) { SDL_SetRenderDrawColor(render, 170, 170, 170, 255); }    
+			if (contador &gt;= 8 ) { SDL_SetRenderDrawColor(render, 140, 140, 140, 255); }    
+			if (contador &gt;= 9 ) { SDL_SetRenderDrawColor(render, 100, 100, 100, 255); }    
+			if (contador &gt;= 10 ) { SDL_SetRenderDrawColor(render, 60, 60, 60, 255); }    
+			if (contador &gt;= 11 ) { SDL_SetRenderDrawColor(render, 20, 20, 20, 255); }    
+			if (contador &gt;= 12 ) { SDL_SetRenderDrawColor(render, 1, 1, 1, 255); }    
+			SDL_RenderPresent(render);
+			contador=contador+1;
+		}
+
+		//SDL_Delay(150);
+
+		SDL_SetRenderDrawColor(render, 1, 1, 1, 255); // RGB será negro. El cuarto valor es alpha. 255 es opaco.
+		SDL_RenderFillRect(render, &fondo);
+		SDL_RenderDrawPoint(render, 0, 0);
+		SDL_RenderPresent(render);
+		SDL_RenderClear(render);
+		contador2=contador2+1;
+    }
+
+
+
+	while (!quit) {
+		SDL_WaitEvent(&evento);
+
+		switch (evento.type) {
+			case SDL_QUIT:
+				quit = true;
+				break;
+		}
+
+
+	}
+
+}
+
+</pre><p>&nbsp;&nbsp;<br /> Código que al compilarlo ofrecerá algo así como esto:<br /> &nbsp;&nbsp;<br /> <img src="https://mierda.tv/wp-content/uploads/2017/05/lluvia.png" alt="" width="640" height="516" class="alignnone size-full wp-image-2811" srcset="https://mierda.tv/wp-contenido/uploads/2017/05/lluvia.png 640w, https://mierda.tv/wp-contenido/uploads/2017/05/lluvia-300x242.png 300w" sizes="(max-width: 640px) 100vw, 640px" /><br /> &nbsp;&nbsp;<br /> Mucho mejor que dibujar un simple pixel generar un aray de posiciones en los que dibujarlos y simular al ser fondo negro que cada punto es una estrella. <strong>Si se usan degradados de gris se puede conseguir un efecto de profundidad</strong> (las estrellas más blancas lucen más, están más cerca, las menos blancas más lejos, las casi negras muy lejos, &#8230;).<br /> &nbsp;&nbsp;<br /> En el caso del ejemplo vemos que se generarán 10 escenarios aleatorios de lluvia de estrellas en las que veremos caer las estrellas dejando un pequeño halo.<br /> &nbsp;&nbsp;<br /> <strong>Ese degradado del halo puede servir como efecto en disparos.</strong> Que los disparos dejen un pequeño rastro de sus colores degradados puede ser un efecto chuli que generará o ayudará a entender el movimiento y que quede más suave.<br /> &nbsp;&nbsp;<br /> Una vez sabemos dibujar un píxel en pantalla y dibujar muchos supongo que podremos imaginar ese juego del que hablaba al principio. Ir moviendo con los cursores un pixel que va dejando su rastro es algo sencillo.<br /> &nbsp;&nbsp;<br /> Si no sabes como puedes mirar el post: <a href="https://mierda.tv/2017/05/07/sdl-en-c-bajo-gnulinux-005-moviendo-con-el-teclado-un-objeto/">https://mierda.tv/2017/05/07/sdl-en-c-bajo-gnulinux-005-moviendo-con-el-teclado-un-objeto/</a><br /> &nbsp;&nbsp;<br /> Lo cierto es que me he enfrascado en el código de la lluvia de estrellas queriendo hacer algo mucho más complejo. Al final ando ya sin energía y aunque se que es una chapucilla pues funciona de igual forma.<br /> &nbsp;&nbsp;<br /> Algunas veces es mejor dejar reposar una función o algún código que andas realizando y seguirlo otro día. Si te enfrascas con algo es posible que termines consiguiendo lo que querías pero si lo revisas otro día verás que lo mismo estabas haciendo las cosas más complicadas de lo que se precisa.<br /> &nbsp;&nbsp;<br /> Saludos cordiales.</p><div class='rp4wp-related-posts'><h3>Más mierda posiblemente relacionada</h3><ul><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2017/05/13/sdl-en-c-bajo-gnulinux-012-mostrar-numeros-obtenidos-por-puerto-serie-usb/'>SDL en C bajo GNU/Linux 012 - Mostrar números obtenidos por puerto serie USB</a><p>&nbsp;&nbsp; Normalmente las entradas sobre SDL de esta serie no llevarán elementos externos. No obstante&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2017/05/02/sdl-en-c-bajo-gnulinux-003-mostrando-una-imagen/'>SDL en C bajo GNU/Linux 003 - Mostrando una imagen</a><p>En anteriores entradas de esta serie hemos visto como crear un makefile y que herramientas&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/06/27/recopilacion-programar-juegos-con-sdl-en-c/'>Recopilación - Programar juegos con SDL en C</a><p>En 2017 me entró la vena de programar en C algunos juegos y de paso&hellip;</p></div></li></ul></div></div><div class="meta bottom section-inner"><p class="tags"> #<a href="https://mierda.tv/tag/linux/" rel="tag">linux</a> #<a href="https://mierda.tv/tag/pixel/" rel="tag">pixel</a> #<a href="https://mierda.tv/tag/sdl/" rel="tag">sdl</a> #<a href="https://mierda.tv/tag/sdl-con-c/" rel="tag">sdl con c</a> #<a href="https://mierda.tv/tag/sdl2/" rel="tag">SDL2</a> #<a href="https://mierda.tv/tag/sdl2-c/" rel="tag">sdl2 c</a> #<a href="https://mierda.tv/tag/tutorial/" rel="tag">tutorial</a></p></div><div class="post-pagination section-inner"><div class="previous-post"> <a href="https://mierda.tv/2017/05/08/sdl-en-c-bajo-gnulinux-006-horizontal-parallax-scrolling/" rel="prev"><span>SDL en C bajo GNU/Linux 006 &#8211; Horizontal parallax scrolling</span></a></div><div class="next-post"> <a href="https://mierda.tv/2017/05/09/sdl-en-c-bajo-gnulinux-008-degradados/" rel="next"><span>SDL en C bajo GNU/Linux 008 &#8211; Degradados</span></a></div></div><div class="section-inner wide"><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/05/08/sdl-en-c-bajo-gnulinux-007-dibujando-una-lluvia-de-estrellas/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://mierda.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><label for="comment">Comentario</label><textarea autocomplete="nope"  id="3da15cfe48"  name="3da15cfe48"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="nope" style="padding:0;clip:rect(1px, 1px, 1px, 1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;" tabindex="-1"></textarea><script type="text/javascript">document.getElementById("comment").setAttribute( "id", "9ca3d0d9f5da6dfb5e53fccdd941017a" );document.getElementById("3da15cfe48").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p><p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p><p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" /> <input type='hidden' name='comment_post_ID' value='2793' id='comment_post_ID' /> <input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p></form></div></div></div><footer class="site-footer section-inner"><p class="copyright">&copy; 2018 <a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></p></footer></main> <script type="text/javascript">jQuery(document).ready( function() { jQuery.post( "https://mierda.tv/wp-admin/admin-ajax.php", { action : "entry_views", _ajax_nonce : "70537a5d8f", post_id : 2793 } ); } );</script> <script type='text/javascript'>var es_widget_page_notices = {"es_email_notice":"Por favor introduce direcci\u00f3n de correo electr\u00f3nico","es_success_message":"Suscripci\u00f3n correcta.","es_success_notice":"\u00a1Suscripci\u00f3n correcta! Consulta tu bandeja de entrada y confirma tu suscripci\u00f3n. Si no ves el correo en unos minutos, consulta la carpeta spam\/correo no deseado.","es_email_exists":"\u00a1Esa direcci\u00f3n de correo electr\u00f3nico ya existe!","es_error":"Ups. Ha sucedido un error inesperado.","es_invalid_email":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","es_try_later":"Por favor, int\u00e9ntalo transcurridos unos minutos","es_ajax_url":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var mcluhan_ajaxpagination = {"ajaxurl":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php","query_vars":"{\"page\":\"\",\"year\":\"2017\",\"monthnum\":\"05\",\"day\":\"08\",\"name\":\"sdl-en-c-bajo-gnulinux-007-dibujando-una-lluvia-de-estrellas\"}"};</script> <script type="text/javascript" defer src="https://mierda.tv/wp-contenido/cache/autoptimize/js/autoptimize_0f440c40192207511c15447e1fc97710.js"></script></body></html>

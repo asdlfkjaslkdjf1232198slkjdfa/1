@@ -1,0 +1,209 @@
+<!DOCTYPE html><html class="no-js" lang="es-ES"><head><meta http-equiv="content-type" content="text/html" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ><link rel="profile" href="http://gmpg.org/xfn/11"><link type="text/css" media="all" href="https://mierda.tv/wp-contenido/cache/autoptimize/css/autoptimize_dcbc99a7d03052a28dbf604173960da0.css" rel="stylesheet" /><title>Virtualizar KVM y utilizar virt-manager para gestionar &#8211; [ MIERDA TV ]</title><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Feed" href="https://mierda.tv/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; RSS de los comentarios" href="https://mierda.tv/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Virtualizar KVM y utilizar virt-manager para gestionar RSS de los comentarios" href="https://mierda.tv/2018/07/18/virtualizar-kvm-y-utilizar-virt-manager-para-gestionar/feed/" /><link rel='stylesheet' id='mcluhan-fonts-css'  href='https://fonts.googleapis.com/css?family=Archivo:400,400i,600,600i,700,700i&#038;subset=latin-ext' type='text/css' media='all' /> <script type='text/javascript' src='https://mierda.tv/wp-includes/js/jquery/jquery.js'></script> <link rel='https://api.w.org/' href='https://mierda.tv/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mierda.tv/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mierda.tv/wp-includes/wlwmanifest.xml" /><link rel='prev' title='Crear una iso booteable con un kernel Linux y lo mínimo' href='https://mierda.tv/2018/07/17/crear-una-iso-booteable-con-un-kernel-linux-y-lo-minimo/' /><link rel='next' title='Juega en GNU/Linux con CPU a tope con la cope performance y no en powersafe' href='https://mierda.tv/2018/07/18/juega-en-gnu-linux-con-cpu-a-tope-con-la-cope-performance-y-no-en-powersafe/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://mierda.tv/2018/07/18/virtualizar-kvm-y-utilizar-virt-manager-para-gestionar/" /><link rel='shortlink' href='https://mierda.tv/?p=8790' /><link rel="alternate" type="application/json+oembed" href="https://mierda.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmierda.tv%2F2018%2F07%2F18%2Fvirtualizar-kvm-y-utilizar-virt-manager-para-gestionar%2F" /> <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script> <link rel="icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon-1.png" type="image/png"/><link rel="shortcut icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon.png" /></head><body class="post-template-default single single-post postid-8790 single-format-standard"><header class="site-header group"><h1 class="site-title"><a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></h1><p class="site-description">NSFW Fanta text files</p><div class="nav-toggle"><div class="bar"></div><div class="bar"></div></div><div class="menu-wrapper"><ul class="main-menu desktop"><li id="menu-item-9007" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li id="menu-item-9006" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li id="menu-item-9008" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li id="menu-item-9012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li id="menu-item-9011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li id="menu-item-9010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li></ul></div><ul class="social-menu desktop"><li><a href="https://mierda.tv/?s="></a></li><li id="menu-item-10588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></header><div class="mobile-menu-wrapper"><ul class="main-menu mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li><li class="toggle-mobile-search-wrapper"><a href="#" class="toggle-mobile-search">Buscar</a></li></ul><ul class="social-menu mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></div><div class="mobile-search"><div class="untoggle-mobile-search"></div><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab6bc55320d"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab6bc55320d" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form><div class="mobile-results"><div class="results-wrapper"></div></div></div><div class="search-overlay"><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab6bc5532a3"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab6bc5532a3" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form></div><main class="site-content"><article class="post-8790 post type-post status-publish format-standard hentry category-sistemas tag-kvm missing-thumbnail"><header class="entry-header section-inner"><h1 class="entry-title">Virtualizar KVM y utilizar virt-manager para gestionar</h2><div class="meta"> <time><a href="https://mierda.tv/2018/07/18/virtualizar-kvm-y-utilizar-virt-manager-para-gestionar/" title="18 julio, 2018 5:10 pm">18 julio, 2018</a></time> <span> En <a href="https://mierda.tv/category/sistemas/" rel="category tag"># SYSTEM</a> </span></div></header><div class="entry-content section-inner"><p>La forma de virtualizar (en este caso en debian) con KVM podría ser la que se describe a continuación.</p><p>Primero instalar dependencias y reiniciar (teniendo una maquina que soporte virtualización).</p><pre>
+# apt install -y qemu-kvm libvirt0 virt-manager bridge-utils 
+# reboot
+</pre><p>Comprobarmos las interfaces de red así (el nombre, ya sea eth0, ens0, o lo que sea:</p><pre>
+$ ip a s
+</pre><p>En /etc/network/interfaces podemos o dejar fija la ip de nuestra interface o por dhcp. Tambien la nueva interface puente br0. Ejemplos:</p><pre>
+auto br0
+iface br0 inet dhcp
+      bridge_ports ens3
+      bridge_stp off
+      bridge_maxwait 0  
+      
+auto br0
+iface br0 inet static
+      address 192.168.11.93
+      netmask 255.255.255.0
+      network 192.168.11.0
+      broadcast 192.168.11.255
+      gateway 192.168.11.1
+      bridge_ports ens3
+      bridge_stp off
+      bridge_maxwait 0
+</pre><p>Una de esas configuraciones nos puede servir o si no la adaptamos a nuestras necesidades. La idea es que al final tengamos br0 con una ip. Si necesitas reiniciar hazlo.</p><pre>
+$ ip a s
+# gpasswd libvirt -a nombredeusuario
+</pre><p>Te bajas una iso de debian por ejemplo y la mueves a este directorio:</p><pre>
+# mv debian-9.0.0-amd64-netinst.iso /var/lib/libvirt/images/
+# chown libvirt-qemu:libvirt /var/lib/libvirt/iso/debian-9.0.0-amd64-netinst.iso
+</pre><p>Finalmente ejecutas virt-manager y cargas la iso:</p><pre>
+$ virt-manager
+</pre><p><img src="https://mierda.tv/wp-contenido/uploads/2018/07/maquina-virtual-nueva-con-virt-manager.png" alt="" width="682" height="555" class="alignnone size-full wp-image-8791" /></p><p><strong>Algunos comandos que te serán de utilidad para controlar el tema:</strong></p><p>Listar máquinas virtuales en ejecución:</p><pre>
+# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 5     WXPsp3                         running
+ 6     slacko                         running
+</pre><pre>
+Listar todas las máquinas virtuales:
+
+# virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+ 5     WXPsp3                         running
+ 6     slacko                         running
+ -     DSL                            shut off
+ -     w2003_test                     shut off
+</pre><pre>
+Listar pools de almacenamiento:
+
+# virsh pool-list
+Name                 State      Autostart
+-----------------------------------------
+default              active     yes
+VM                   active     yes
+</pre><pre>
+Listar volúmenes de disco:
+
+# virsh vol-list VM
+Name                 Path
+-----------------------------------------
+backup               /data/VM/backup
+slacko.img           /data/VM/slacko.img
+WXPsp3.img           /data/VM/WXPsp3.img
+</pre><pre>
+Eliminar máquinas virtuales: se deben utilizar los comandos: 
+
+virsh destroy [id]
+virsh undefine [id]
+virsh vol-delete [img]
+</pre><p>Un ejemplo completo de listado de maquinas ejecutándose y apagadas:</p><pre>
+# virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+ 5     WXPsp3                         running       
+ 6     slacko                         running       
+ -     DSL                            shut off      
+ -     w2003_test                     shut off      
+</pre><p>Instala maquina:</p><pre>
+# virt-install --name slacko2 --hvm --vcpus=1 --ram 256 --disk path=/data/VM/slacko2.img,size=1,sparse=false --network network=default --os-type linux --noautoconsole --graphics vnc,port=6668,listen=0.0.0.0 --cdrom=/data/ISO/slacko-5.3.3-4g-SCSI.iso                                                                                                                                    
+
+Starting install...
+Allocating 'slacko2.img'                                                                                      | 1.0 GB     00:00     
+Creating domain...                                                                                            |    0 B     00:00     
+Domain installation still in progress. You can reconnect to                                                                          
+the console to complete the installation process.                                                                                    
+# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 5     WXPsp3                         running       
+ 6     slacko                         running       
+ 9     slacko2                        running       
+</pre><pre>
+# virsh vol-list VM
+Name                 Path                                    
+-----------------------------------------                    
+backup               /data/VM/backup                         
+slacko.img           /data/VM/slacko.img                     
+slacko2.img          /data/VM/slacko2.img                    
+WXPsp3.img           /data/VM/WXPsp3.img                     
+
+# virsh destroy slacko2
+Domain slacko2 destroyed                 
+
+# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 5     WXPsp3                         running       
+ 6     slacko                         running       
+
+# virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+ 5     WXPsp3                         running       
+ 6     slacko                         running       
+ -     DSL                            shut off      
+ -     slacko2                        shut off
+ -     w2003_test                     shut off
+
+# virsh undefine slacko2
+Domain slacko2 has been undefined
+
+# virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+ 5     WXPsp3                         running
+ 6     slacko                         running
+ -     DSL                            shut off
+ -     w2003_test                     shut off
+
+# virsh vol-delete --pool VM slacko2.img
+Vol slacko2.img deleted
+
+# virsh vol-list VM
+Name                 Path
+-----------------------------------------
+backup               /data/VM/backup
+slacko.img           /data/VM/slacko.img
+WXPsp3.img           /data/VM/WXPsp3.img
+</pre><pre>
+# Listar las Máquinas Virtuales
+
+[root@test ~]# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 1     w2003                        running
+ 2     centos                       running
+ 4     fedora                       running
+</pre><pre>
+# Apagar Máquina Virtual
+
+# virsh shutdown centos
+</pre><pre>
+# Reiniciar Máquina Virtual
+
+# virsh reboot centos
+</pre><pre>
+# Forzar / Detener Máquina Virtual
+
+# virsh destroy centos
+</pre><pre>
+# Obtener Información acerca de la Máquina Virtual
+
+# virsh dominfo centos
+</pre><pre>
+# Obtener información acerca del Nodo
+
+[root@test ~]# virsh nodeinfo
+CPU model:           x86_64
+CPU(s):              24
+CPU frequency:       1596 MHz
+CPU socket(s):       1
+Core(s) per socket:  6
+Thread(s) per core:  2
+NUMA cell(s):        2
+Memory size:         32814444 kB
+</pre><pre>
+# Editar Configuración de Máquina Virtual
+
+# virsh edit centos
+</pre><pre>
+# Instalar Máquina Virtual CenOS 5.5 utilizando un mirror http:
+# Con 512Mb de RAM, 4GB de espacio en disco y utilizando la interfaz de red br0 (bridged network).
+
+# virt-install \
+ -n centos \
+ -r 512 \
+ --vcpus=1 \
+ --os-variant=rhel5.4 \
+ --accelerate \
+ -v \
+ -l http://mirrors.kernel.org/centos/5.5/os/x86_64/ \
+ -w bridge:br0 \
+ --vnc \
+ --disk path=/tmp/centos.img,size=4 
+</pre><pre>
+# Podemos conectarnos a dicha máquina virtual haciendo un:
+
+# virt-viewer centos
+</pre><pre>
+# Ubicación de archivos log:
+
+$HOME/.virtinst/virt-install.log
+$HOME/.virt-manager/virt-manager.log
+/var/log/libvirt/qemu
+</pre><pre>
+# Ubicación de archivos de configuración:
+
+/etc/libvirt/qemu/centos.xml
+</pre><p>Saludos cordiales.</p><div class='rp4wp-related-posts'><h3>Más mierda posiblemente relacionada</h3><ul><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/01/29/que-distro-de-gnu-linux-utilizar/'>¿Que distro de GNU/Linux utilizar?</a><p>La que te de la gana es buena respuesta. Pero antes de responder a la&hellip;</p></div></li></ul></div></div><div class="meta bottom section-inner"><p class="tags"> #<a href="https://mierda.tv/tag/kvm/" rel="tag">kvm</a></p></div><div class="post-pagination section-inner"><div class="previous-post"> <a href="https://mierda.tv/2018/07/17/crear-una-iso-booteable-con-un-kernel-linux-y-lo-minimo/" rel="prev"><span>Crear una iso booteable con un kernel Linux y lo mínimo</span></a></div><div class="next-post"> <a href="https://mierda.tv/2018/07/18/juega-en-gnu-linux-con-cpu-a-tope-con-la-cope-performance-y-no-en-powersafe/" rel="next"><span>Juega en GNU/Linux con CPU a tope con la cope performance y no en powersafe</span></a></div></div><div class="section-inner wide"><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2018/07/18/virtualizar-kvm-y-utilizar-virt-manager-para-gestionar/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://mierda.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><label for="comment">Comentario</label><textarea autocomplete="nope"  id="f3ae9fd3ba"  name="f3ae9fd3ba"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="nope" style="padding:0;clip:rect(1px, 1px, 1px, 1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;" tabindex="-1"></textarea><script type="text/javascript">document.getElementById("comment").setAttribute( "id", "a559917b353c2abd37779a97c2eb2d89" );document.getElementById("f3ae9fd3ba").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p><p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p><p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" /> <input type='hidden' name='comment_post_ID' value='8790' id='comment_post_ID' /> <input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p></form></div></div></div><footer class="site-footer section-inner"><p class="copyright">&copy; 2018 <a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></p></footer></main> <script type="text/javascript">jQuery(document).ready( function() { jQuery.post( "https://mierda.tv/wp-admin/admin-ajax.php", { action : "entry_views", _ajax_nonce : "70537a5d8f", post_id : 8790 } ); } );</script> <script type='text/javascript'>var es_widget_page_notices = {"es_email_notice":"Por favor introduce direcci\u00f3n de correo electr\u00f3nico","es_success_message":"Suscripci\u00f3n correcta.","es_success_notice":"\u00a1Suscripci\u00f3n correcta! Consulta tu bandeja de entrada y confirma tu suscripci\u00f3n. Si no ves el correo en unos minutos, consulta la carpeta spam\/correo no deseado.","es_email_exists":"\u00a1Esa direcci\u00f3n de correo electr\u00f3nico ya existe!","es_error":"Ups. Ha sucedido un error inesperado.","es_invalid_email":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","es_try_later":"Por favor, int\u00e9ntalo transcurridos unos minutos","es_ajax_url":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var mcluhan_ajaxpagination = {"ajaxurl":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php","query_vars":"{\"page\":\"\",\"year\":\"2018\",\"monthnum\":\"07\",\"day\":\"18\",\"name\":\"virtualizar-kvm-y-utilizar-virt-manager-para-gestionar\"}"};</script> <script type="text/javascript" defer src="https://mierda.tv/wp-contenido/cache/autoptimize/js/autoptimize_0f440c40192207511c15447e1fc97710.js"></script></body></html>

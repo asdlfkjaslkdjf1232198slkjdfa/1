@@ -1,0 +1,200 @@
+<!DOCTYPE html><html class="no-js" lang="es-ES"><head><meta http-equiv="content-type" content="text/html" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ><link rel="profile" href="http://gmpg.org/xfn/11"><link type="text/css" media="all" href="https://mierda.tv/wp-contenido/cache/autoptimize/css/autoptimize_dcbc99a7d03052a28dbf604173960da0.css" rel="stylesheet" /><title>Breve Introducción a Openscad &#8211; Diseño paramétrico para impresión 3D &#8211; [ MIERDA TV ]</title><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Feed" href="https://mierda.tv/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; RSS de los comentarios" href="https://mierda.tv/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="[ MIERDA TV ] &raquo; Breve Introducción a Openscad &#8211; Diseño paramétrico para impresión 3D RSS de los comentarios" href="https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/feed/" /><link rel='stylesheet' id='mcluhan-fonts-css'  href='https://fonts.googleapis.com/css?family=Archivo:400,400i,600,600i,700,700i&#038;subset=latin-ext' type='text/css' media='all' /> <script type='text/javascript' src='https://mierda.tv/wp-includes/js/jquery/jquery.js'></script> <link rel='https://api.w.org/' href='https://mierda.tv/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mierda.tv/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mierda.tv/wp-includes/wlwmanifest.xml" /><link rel='prev' title='Visores de pdf sencillos para GNU/Linux' href='https://mierda.tv/2017/09/18/visores-de-pdf-sencillos-para-gnulinux/' /><link rel='next' title='fstl &#8211; Para visualizar archivos STL sin esperas' href='https://mierda.tv/2017/10/01/fstl-para-visualizar-archivos-stl-sin-esperas/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/" /><link rel='shortlink' href='https://mierda.tv/?p=3482' /><link rel="alternate" type="application/json+oembed" href="https://mierda.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmierda.tv%2F2017%2F09%2F27%2Fbreve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d%2F" /> <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script> <link rel="icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon-1.png" type="image/png"/><link rel="shortcut icon" href="https://mierda.tv/wp-contenido/uploads/2017/12/favicon.png" /></head><body class="post-template-default single single-post postid-3482 single-format-standard"><header class="site-header group"><h1 class="site-title"><a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></h1><p class="site-description">NSFW Fanta text files</p><div class="nav-toggle"><div class="bar"></div><div class="bar"></div></div><div class="menu-wrapper"><ul class="main-menu desktop"><li id="menu-item-9007" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li id="menu-item-9006" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li id="menu-item-9008" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li id="menu-item-9012" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li id="menu-item-9011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li id="menu-item-9010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li></ul></div><ul class="social-menu desktop"><li><a href="https://mierda.tv/?s="></a></li><li id="menu-item-10588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></header><div class="mobile-menu-wrapper"><ul class="main-menu mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9007"><a href="https://mierda.tv/category/sistemas/"># SYSTEM</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9006"><a href="https://mierda.tv/category/codigo/"># CODE</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9008"><a href="https://mierda.tv/category/juegos/"># GAMES</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9012"><a href="https://mierda.tv/category/3d/"># 3D</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9011"><a href="https://mierda.tv/category/musica/"># MUSIC</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9010"><a href="https://mierda.tv/category/opinion/"># VIEW</a></li><li class="toggle-mobile-search-wrapper"><a href="#" class="toggle-mobile-search">Buscar</a></li></ul><ul class="social-menu mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10588"><a title="Suscríbete al Boletín mensual de Mierda.tv" href="https://mierda.tv/suscribete-al-boletin-mensual-de-mierda-tv/"><span class="screen-reader-text">Suscríbete al Boletín mensual de Mierda.tv</span></a></li></ul></div><div class="mobile-search"><div class="untoggle-mobile-search"></div><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab60ae327de"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab60ae327de" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form><div class="mobile-results"><div class="results-wrapper"></div></div></div><div class="search-overlay"><form role="search" method="get" class="search-form" action="https://mierda.tv/"> <label for="search-form-5bab60ae32878"> <span class="screen-reader-text">Búsqueda para:</span> </label> <input type="search" id="search-form-5bab60ae32878" class="search-field" placeholder="Introduce tu búsqueda" value="" name="s" autocomplete="off" /> </button></form></div><main class="site-content"><article class="post-3482 post type-post status-publish format-standard hentry category-3d tag-diseno-parametrico tag-linux tag-openscad missing-thumbnail"><header class="entry-header section-inner"><h1 class="entry-title">Breve Introducción a Openscad &#8211; Diseño paramétrico para impresión 3D</h2><div class="meta"> <time><a href="https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/" title="27 septiembre, 2017 9:52 am">27 septiembre, 2017</a></time> <span> En <a href="https://mierda.tv/category/3d/" rel="category tag"># 3D</a> </span></div></header><div class="entry-content section-inner"><p>Esto es un documento que monté para un poco mostrar que es openscad con ejemplos sencillos.<strong> Puede bajarse</strong> desde aquí en pdf: <a href="https://mierda.tv/wp-content/uploads/2017/09/openscad.pdf">openscad.pdf</a></p><p>A modo de mirror para que no se pierda lo dejo en este post.</p><p>&nbsp;</p><p>&nbsp;</p><h1 class="western">Instalación de Openscad en GNU/Linux</h1><p>Instalar Openscad en GNU/Linux es muy sencillo. En este escrito comentaremos como puedes hacerlo si usas como distro Debian o similares. También como compilarlo.</p><h2 class="western"><a name="__RefHeading___Toc112_4212774499"></a>Instalar una versión stable de Openscad</h2><pre class="western"># apt-get install openscad</pre><h2 class="western"><a name="__RefHeading___Toc114_4212774499"></a>Instalar una version nightly de Openscad</h2><pre class="western"># apt-get remove openscad --purge
+# apt autoremove
+# wget -qO - http://files.openscad.org/OBS-Repository-Key.pub | sudo apt-key add -
+# echo "deb http://download.opensuse.org/repositories/home:/t-paul/Debian_9.0/ ./" &gt;&gt; /etc/apt/sources.list
+# apt-get update
+# apt-get install openscad-nightly</pre><h2 class="western"><a name="__RefHeading___Toc116_4212774499"></a>Compilar Openscad desde el código fuente</h2><pre class="western"># apt-get remove openscad --purge 
+# apt-get install git flex libharfbuzz-dev libfreetype6-dev
+# apt-get install libfontconfig1-dev libqscintilla2-dev libcgal-dev libopencsg-dev
+# apt-get install libglew-dev libeigen3-dev libglib2.0-dev libglib2.0-cil-dev libxml2-dev
+$ git clone https://github.com/openscad/openscad
+$ cd openscad/scripts</pre><p>Con el siguiente script comprobamos si nos falta alguna dependencia por instalar:</p><p># bash check-dependencies.sh</p><p>Finalmente si hemos instalado todas las dependencias y check-dependencies.sh nos dice OK a todo vamos a compilar.</p><p>Si deseamos también podemos ejecutar el script uni-get-dependencies.sh para instalar las dependencias.</p><pre class="western">$ cd ..
+$ qmake
+$ make
+$ ./openscad
+# make install
+$ openscad
+
+</pre><h1 class="western">¿Qué es Openscad y para que puedo usarlo?</h1><p>OpenSCAD es una aplicación libre para crear objetos sólidos de CAD. No es un editor interactivo sino un compilador 3D basado en un lenguaje de descripción textual. Un documento de OpenSCAD especifica primitivas geométricas y define como son modificadas y manipuladas para reproducir un modelo 3D.</p><p>OpenSCAD está <b>disponible</b> para Windows, <b>Linux</b> y OS X. <b>El desarrollo de OpenSCAD comenzó en 2010.</b></p><p><b>OpenSCAD permite al diseñador crear modelos 3D precisos y diseños paramétricos</b> que pueden ser fácilmente ajustados cambiando los parámetros.</p><p>Comparado con la mayoría de otros formatos de fichero CAD, que no son fácilmente leíbles por humanos, <b>los documentos OpenSCAD son como el software de código abierto</b>.</p><p><b>Podemos usar Openscad para realizar piezas que luego podemos imprimir con una impresora 3D.</b></p><p>Esto nos permite poder diseñar algo directamente tecleando el código y pudiendo parametrizar la pieza mediante variables. Esas variables nos permitirán poder ajustar la pieza para realizar cambios de forma rapida usando cualquier editor de texto que tengamos a mano o nos guste.</p><p>&nbsp;</p><h1 class="western">Enlaces de Interés</h1><p><b>Web oficial:</b> http://www.openscad.org/</p><p><b>Github:</b> https://github.com/openscad/openscad</p><p><b>Cheat Sheet:</b> http://www.openscad.org/cheatsheet/index.html</p><p><b>Openscad online:</b> <a href="http://openscad.net/">http://openscad.net/</a></p><p><b>Openscad Language:</b> https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language</p><p>&nbsp;</p><h1 class="western">Diseño paramétrico de un cubo</h1><p>&nbsp;</p><p>Vamos a probar varios códigos para ir viendo como funciona el tema.</p><p>&nbsp;</p><p><b>Ejemplo 000:</b></p><pre class="western">cube([100,100,100]);
+
+<img class="alignnone size-full wp-image-3486" src="https://mierda.tv/wp-content/uploads/2017/09/002.png" alt="" width="815" height="382" />
+
+</pre><p><b>Ejemplo 001:</b></p><pre class="western">/* Código de ejemplo de un cubo */
+// Parámetros del cubo
+ancho=10;
+fondo=100;
+alto=20;
+x=ancho;
+y=fondo;
+z=alto;
+
+cube([x,y,z]);
+</pre><pre class="western"><img class="alignnone size-full wp-image-3487" src="https://mierda.tv/wp-content/uploads/2017/09/003.png" alt="" width="804" height="382" />
+
+
+</pre><p><b>Ejemplo 002:</b></p><pre class="western">x=100;
+y=100;
+z=100;
+
+translate([20,0,0]) {
+    cube([x,y,z]);
+};
+
+<img class="alignnone size-full wp-image-3488" src="https://mierda.tv/wp-content/uploads/2017/09/004.png" alt="" width="808" height="379" /></pre><p><b>Ejemplo 003:</b></p><pre class="western">x=1;
+y=1;
+z=1;
+
+for (a=[0:10]){
+    translate([a,a,a]) {
+           cube([x,y,z]);
+    };
+}; 
+
+<img class="alignnone size-full wp-image-3489" src="https://mierda.tv/wp-content/uploads/2017/09/005.png" alt="" width="648" height="307" />
+
+</pre><p><b>Ejemplo 004:</b></p><pre class="western">for (i=[0:3])
+   translate([i*10,0,0])
+     cube(i+1);
+
+
+<img class="alignnone size-full wp-image-3491" src="https://mierda.tv/wp-content/uploads/2017/09/007.png" alt="" width="567" height="277" /></pre><pre class="western"></pre><p><b>Ejemplo 005:</b></p><pre class="western">for (i=[0:4]){
+    translate([i*5,0,0]){
+        cube(i+1);
+    }
+}
+
+<img class="alignnone size-full wp-image-3490" src="https://mierda.tv/wp-content/uploads/2017/09/006.png" alt="" width="668" height="293" /></pre><h1 class="western">Diferencia y rotación – Taladros usando cilindros</h1><p>&nbsp;</p><p><b>Ejemplo 006:</b></p><pre class="western">difference(){
+    translate ([0,0,0]){ cube([8,8,8]); }
+    translate ([4,4,-1]){ cylinder(r=1, h=10, $fn=100); }
+}</pre><pre class="western"><img class="alignnone size-full wp-image-3492" src="https://mierda.tv/wp-content/uploads/2017/09/008.png" alt="" width="655" height="357" />
+
+</pre><p><b>Ejemplo 007</b></p><pre class="western">difference(){
+    translate ([0,0,0]){ cube([8,8,8]); }
+    translate ([2,2,-1]){ cylinder(r=1, h=10, $fn=100); }
+    translate ([6,6,-1]){ cylinder(r=1, h=10, $fn=100); }
+    translate ([6,2,-1]){ cylinder(r=1, h=10, $fn=100); }
+    translate ([2,6,-1]){ cylinder(r=1, h=10, $fn=100); }
+}
+
+<img class="alignnone size-full wp-image-3493" src="https://mierda.tv/wp-content/uploads/2017/09/009.png" alt="" width="684" height="350" />
+
+</pre><p><b>Ejemplo 008</b></p><pre class="western">difference(){
+   translate ([0,0,0]){ cube([8,8,8]); }
+    rotate([90,0,0]) { 
+        translate([4,4,-9]){
+            cylinder(r=1, h=10, $fn=100); 
+        }
+   } 
+}
+
+<img class="alignnone size-full wp-image-3494" src="https://mierda.tv/wp-content/uploads/2017/09/010.png" alt="" width="662" height="310" /></pre><h1 class="western">Extruir un circulo 2D otra forma de hacer taladros</h1><pre class="western"></pre><p><b>Ejemplo 009:</b></p><pre class="western">// for [inicio:incremento:final] volcado a variable a
+for(a=[0:10:80]){
+    translate([a,0,0]){
+        linear_extrude(a) { circle (r=5); }
+    }
+}</pre><pre class="western"><img class="alignnone size-full wp-image-3495" src="https://mierda.tv/wp-content/uploads/2017/09/011.png" alt="" width="610" height="278" />
+
+
+</pre><p><b>Ejemplo 010:</b></p><pre class="western">difference(){
+    cylinder(r=6, h=2, $fn=100);
+    translate([0,0,-1]){ linear_extrude(10) { circle (r=5, $fn=100); } }
+}
+
+ <img class="alignnone size-full wp-image-3497" src="https://mierda.tv/wp-content/uploads/2017/09/012.png" alt="" width="593" height="338" />
+
+
+
+</pre><h1 class="western">Polígonos mediante coordenadas de puntos</h1><p>&nbsp;</p><p><b>Ejemplo 11:</b></p><pre class="western">polygon(points=[[0,0],[100,0],[100,100],[0,100]]);
+
+
+<img class="alignnone size-full wp-image-3498" src="https://mierda.tv/wp-content/uploads/2017/09/016.png" alt="" width="594" height="292" />
+
+</pre><pre class="western"><b>Ejemplo 12:</b>
+
+polygon(points=[[0,0],[20,100],[0,100]]);</pre><pre class="western"><img class="alignnone size-full wp-image-3499" src="https://mierda.tv/wp-content/uploads/2017/09/015.png" alt="" width="594" height="284" />
+
+</pre><pre class="western"><b>Ejemplo 13:</b>
+
+linear_extrude(100) {
+    polygon(points=[[0,0],[100,0],[100,100],[0,100]]);
+}
+
+<img class="alignnone size-full wp-image-3500" src="https://mierda.tv/wp-content/uploads/2017/09/017.png" alt="" width="569" height="246" /></pre><h1 class="western">Diseñar en Inkscape e importar y extruir en openscad</h1><p>&nbsp;</p><p><b>Ejemplo 012:</b></p><p>Primero lo diseñamos en Inkscape y lo exportamos como dxf.</p><p>&nbsp;</p><p><img class="alignnone size-full wp-image-3501" src="https://mierda.tv/wp-content/uploads/2017/09/014.png" alt="" width="563" height="437" /></p><p>En openscad lo importamos así:</p><pre class="western">translate([0,0,0]){
+    rotate([0,0,0]) {
+        linear_extrude(height = 20) import("/home/fanta/dibujo.dxf");
+    }
+ }
+
+<img class="alignnone size-full wp-image-3502" src="https://mierda.tv/wp-content/uploads/2017/09/013.png" alt="" width="550" height="282" /></pre><h1 class="western">Ejercicios prácticos</h1><p>&nbsp;</p><p><b>Ejercicio 1:</b></p><p>Realizar el siguiente dibujo usando polygon. Altura 100mm anchura 60mm. Cada pata 10mm</p><p><img class="alignnone size-full wp-image-3503" src="https://mierda.tv/wp-content/uploads/2017/09/018.png" alt="" width="310" height="233" /><br /> <b>Ejercicio 2:</b></p><p>Realizar un calzador para puertas del tamaño que consideremos.</p><pre class="western"><img class="alignnone size-full wp-image-3504" src="https://mierda.tv/wp-content/uploads/2017/09/019.png" alt="" width="610" height="324" />
+
+</pre><p><b>Ejercicio 3:</b></p><p>Realizar un cuenco hueco en forma de semiesfera que se sostenga sobre una mesa.</p><p>La parte de abajo ha de poder apoyar y no ha de salirse el liquido. El tamaño que se quiera.</p><p><img class="alignnone size-full wp-image-3505" src="https://mierda.tv/wp-content/uploads/2017/09/020.png" alt="" width="565" height="255" /></p><p><img class="alignnone size-full wp-image-3506" src="https://mierda.tv/wp-content/uploads/2017/09/021.png" alt="" width="573" height="275" /></p><pre class="western"></pre><h1 class="western">Soluciones ejercicios prácticos</h1><p><b>Ejercicio 1:</b></p><pre class="western">linear_extrude(10) {
+    polygon(points=[[0,0],[10,0],[10,80],[20,80],[20,0],[30,0],[30,80],[40,80],[40,0],[50,0],[50,80],[60,80],[60,0],[70,0],[70,100],[0,100]]);
+}
+
+</pre><p><b>Ejercicio 2:</b></p><pre class="western">linear_extrude(100) {
+    polygon(points=[[0,0],[20,100],[0,100]]);
+}
+
+</pre><p><b>Ejercicio 3:</b></p><pre class="western">difference(){
+   difference(){
+        difference(){
+            sphere(d=20, $fn=100);
+            sphere(d=18, $fn=100);
+        }
+        translate([-25,-25,0]){ cube([50,50,20]); }
+    }
+    translate([-25,-25,-29]){ cube([50,50,20]); }
+}
+
+
+
+</pre><h1 class="western">Hacer un HULL entre cilindros</h1><p>&nbsp;</p><p>Es posible disponer varios cilindros y que mediante la función hull se unan las tangentes entre estos.</p><p>Un ejemplo con 3 cilindros puede ser este:</p><p>&nbsp;</p><pre class="western">r1 =20;    // Radio cilindro 1
+r2 = 10;   // Radio cilindro 2
+r3 = 10;   // Radio cilindro 2
+th = 2;    // Grosor
+
+hull() {
+    translate([0, 0, 0]){
+          cylinder(r = r1, h = th, center = true, $fn = 50);
+    }
+    translate([25, 30, 0]){
+        cylinder(r = r2, h = th, center = true, $fn = 50);
+    }
+    translate([-25, 30, 0]){
+        cylinder(r = r3, h = th, center = true, $fn = 50);
+    }
+}</pre><pre class="western"><img class="alignnone size-full wp-image-3507" src="https://mierda.tv/wp-content/uploads/2017/09/023.png" alt="" width="564" height="425" />
+
+<img class="alignnone size-full wp-image-3508" src="https://mierda.tv/wp-content/uploads/2017/09/022.png" alt="" width="571" height="459" />
+
+</pre><h1 class="western">Diseñar un tapador de webcam para notebooks</h1><p>Es posible hacerlo de muchas formas. Una posible es usando inkscape para sacar las coordenadas de los puntos que vamos a necesitar para generar un poligono extruible.</p><p><img class="alignnone size-full wp-image-3509" src="https://mierda.tv/wp-content/uploads/2017/09/024.png" alt="" width="772" height="586" /></p><p>&nbsp;</p><p>En openscad el código que se ve en esa imagen sirve pero no es paramétrico.</p><p>Para hacerlo paramétrico hemos de currarlo un poco. Por ejemplo:</p><pre>altura=150;
+anchura=40;
+grosor=3;
+extrusion=100;
+extruir="no"; // valores posibles si o no
+
+if (extruir=="no"){
+ polygon(points=[
+ [0,0],
+ [0,altura],
+ [anchura,altura-(altura*15/100)],
+ [anchura/2,altura/2],
+ [(anchura/2)-grosor,(altura/2)],
+ [(anchura)-grosor,((altura-(altura*15/100))-grosor)+1],
+ [grosor,(altura-grosor)-1],
+ [grosor,0]
+ ]);
+}else{
+ linear_extrude(extrusion){
+ polygon(points=[
+ [0,0],
+ [0,altura],
+ [anchura,altura-(altura*15/100)],
+ [anchura/2,altura/2],
+ [(anchura/2)-grosor,(altura/2)],
+ [(anchura)-grosor,((altura-(altura*15/100))-grosor)+1],
+ [grosor,(altura-grosor)-1],
+ [grosor,0]
+ ]);
+ }
+}</pre><p><img class="alignnone size-full wp-image-3511" src="https://mierda.tv/wp-content/uploads/2017/09/025.png" alt="" width="728" height="588" /></p><div class='rp4wp-related-posts'><h3>Más mierda posiblemente relacionada</h3><ul><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2017/01/21/montaje-de-impresora-3d-bq-hephestos-2/'>Montaje de impresora 3D BQ Hephestos 2</a><p>En un par de tardes se puede montar con tranquilidad.  Si tienes callo montando supongo&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2018/05/02/video-impresion-3d-bote-boligrafos-en-wood-pla/'>Vídeo - Impresión 3D bote bolígrafos en WOOD PLA</a><p>Hoy me ha dado la gana grabar un vídeo de un bote para guardar bolígrafos,&hellip;</p></div></li><li><div class='rp4wp-related-post-content'> <a href='https://mierda.tv/2016/08/08/reloj-solar-3d-imprimible/'>Reloj solar 3D imprimible</a><p>Es una maravilla.  Puedes bajar el reloj solar desde aquí: 22ceglxk Puedes imprimírtelo con tu impresora&hellip;</p></div></li></ul></div></div><div class="meta bottom section-inner"><p class="tags"> #<a href="https://mierda.tv/tag/diseno-parametrico/" rel="tag">diseño parametrico</a> #<a href="https://mierda.tv/tag/linux/" rel="tag">linux</a> #<a href="https://mierda.tv/tag/openscad/" rel="tag">openscad</a></p></div><div class="post-pagination section-inner"><div class="previous-post"> <a href="https://mierda.tv/2017/09/18/visores-de-pdf-sencillos-para-gnulinux/" rel="prev"><span>Visores de pdf sencillos para GNU/Linux</span></a></div><div class="next-post"> <a href="https://mierda.tv/2017/10/01/fstl-para-visualizar-archivos-stl-sin-esperas/" rel="next"><span>fstl &#8211; Para visualizar archivos STL sin esperas</span></a></div></div><div class="section-inner wide"><div class="comments"><h3 class="comment-reply-title">3 comentarios</h3><div class="comment even thread-even depth-1" id="li-comment-2372"><div id="comment-2372"><header class="comment-meta"> <span class="comment-author"> <cite> <a href='http://tomatesasesinos.com' rel='external nofollow' class='url'>MD</a> </cite> </span> <span class="comment-date"> <a class="comment-date-link" href="https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/#comment-2372" title="27 septiembre, 2017 a 4:10 pm">27 septiembre, 2017</a> </span> <span class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/?replytocom=2372#respond' onclick='return addComment.moveForm( "comment-2372", "2372", "respond", "3482" )' aria-label='Responder a MD'>Contestar</a></span></header><div class="comment-content entry-content"><p>Añadir que hay editor y visor de openscad en Android:</p><p><a href="http://www.scorchworks.com/ScorchCAD/scorchcad.html" rel="nofollow">http://www.scorchworks.com/ScorchCAD/scorchcad.html</a></p><p>Lo que no se si es software libre.</p></div><div class="comment-actions"></div></div></div><div class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-2396"><div id="comment-2396"><header class="comment-meta"> <span class="comment-author"> <cite> fanta </cite> </span> <span class="comment-date"> <a class="comment-date-link" href="https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/#comment-2396" title="29 septiembre, 2017 a 8:13 am">29 septiembre, 2017</a> </span> <span class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/?replytocom=2396#respond' onclick='return addComment.moveForm( "comment-2396", "2396", "respond", "3482" )' aria-label='Responder a fanta'>Contestar</a></span></header><div class="comment-content entry-content"><p>Y no olvidemos Openscad online: <a href="http://openscad.net/" rel="nofollow">http://openscad.net/</a> que está en los enlaces.<br /> No necesitas ni instalar nada. con el navegador te pones ya a diseñar piezas.</p></div><div class="comment-actions"></div></div><div class="comment even depth-2" id="li-comment-2422"><div id="comment-2422"><header class="comment-meta"> <span class="comment-author"> <cite> <a href='http://tomatesasesinos.com' rel='external nofollow' class='url'>MD</a> </cite> </span> <span class="comment-date"> <a class="comment-date-link" href="https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/#comment-2422" title="30 septiembre, 2017 a 11:38 pm">30 septiembre, 2017</a> </span> <span class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='https://mierda.tv/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/?replytocom=2422#respond' onclick='return addComment.moveForm( "comment-2422", "2422", "respond", "3482" )' aria-label='Responder a MD'>Contestar</a></span></header><div class="comment-content entry-content"><p>Ohhh, este no lo conocía&#8230;.mola&#8230;.mola&#8230;</p></div><div class="comment-actions"></div></div></div></div></div><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/09/27/breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d/#respond" style="display:none;">Cancelar respuesta</a></small></h3><form action="https://mierda.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><label for="comment">Comentario</label><textarea autocomplete="nope"  id="8d5a80f998"  name="8d5a80f998"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="nope" style="padding:0;clip:rect(1px, 1px, 1px, 1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;" tabindex="-1"></textarea><script type="text/javascript">document.getElementById("comment").setAttribute( "id", "f0e6df704ed70f2ef08c0fd554d18a30" );document.getElementById("8d5a80f998").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p><p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p><p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentario" /> <input type='hidden' name='comment_post_ID' value='3482' id='comment_post_ID' /> <input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p></form></div></div></div><footer class="site-footer section-inner"><p class="copyright">&copy; 2018 <a href="https://mierda.tv" class="site-name">[ MIERDA TV ]</a></p></footer></main> <script type="text/javascript">jQuery(document).ready( function() { jQuery.post( "https://mierda.tv/wp-admin/admin-ajax.php", { action : "entry_views", _ajax_nonce : "70537a5d8f", post_id : 3482 } ); } );</script> <script type='text/javascript'>var es_widget_page_notices = {"es_email_notice":"Por favor introduce direcci\u00f3n de correo electr\u00f3nico","es_success_message":"Suscripci\u00f3n correcta.","es_success_notice":"\u00a1Suscripci\u00f3n correcta! Consulta tu bandeja de entrada y confirma tu suscripci\u00f3n. Si no ves el correo en unos minutos, consulta la carpeta spam\/correo no deseado.","es_email_exists":"\u00a1Esa direcci\u00f3n de correo electr\u00f3nico ya existe!","es_error":"Ups. Ha sucedido un error inesperado.","es_invalid_email":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","es_try_later":"Por favor, int\u00e9ntalo transcurridos unos minutos","es_ajax_url":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var mcluhan_ajaxpagination = {"ajaxurl":"https:\/\/mierda.tv\/wp-admin\/admin-ajax.php","query_vars":"{\"page\":\"\",\"year\":\"2017\",\"monthnum\":\"09\",\"day\":\"27\",\"name\":\"breve-introduccion-a-openscad-diseno-parametrico-para-impresion-3d\"}"};</script> <script type="text/javascript" defer src="https://mierda.tv/wp-contenido/cache/autoptimize/js/autoptimize_0f440c40192207511c15447e1fc97710.js"></script></body></html>
